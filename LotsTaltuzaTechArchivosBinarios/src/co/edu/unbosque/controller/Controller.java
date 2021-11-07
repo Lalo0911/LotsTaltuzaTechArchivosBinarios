@@ -31,31 +31,7 @@ public class Controller {
 		bd.getBf().escribirClase(bd.getJugador2());
 		bd.getBf().leerClase();
 		JOptionPane.showMessageDialog(null, bd.getJugador2()[0]);
-
-		
-//		gui = new View(this);
-//		gui.setVisible(true); //hacer visible la ventana principal
 		
 	}
-
-
-//	public void actionPerformed(ActionEvent evento) {
-//		
-//		String resultado;
-//		if (evento.equals("resultado")) {
-//			
-//		}
-//		
-//		if(evento.equals("Lotso")) {
-//			
-//		}
-//		
-//		if(evento.equals("es ")) {
-//			
-//		}
-//		
-//		if(evento.equals("y ama a Jeanpierr")) {
-//	
-//		}
-//	}
+	
 }
