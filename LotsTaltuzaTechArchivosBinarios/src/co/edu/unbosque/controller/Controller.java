@@ -30,6 +30,7 @@ public class Controller {
 		bd.getBf().escribirClase(bd.getJugador2());
 		bd.getBf().escribirClase(bd.getJugador2());
 		bd.getBf().leerClase();
+		JOptionPane.showMessageDialog(null, bd.getJugador2()[0]);
 
 		
 //		gui = new View(this);
