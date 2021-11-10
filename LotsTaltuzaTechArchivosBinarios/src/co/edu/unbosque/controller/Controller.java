@@ -80,7 +80,8 @@ public class Controller implements ActionListener{
 		}
 		if (evento.getActionCommand().equals("AGREGAR")) 
 		{	
-			gui.getPanelJuego().getTxtJuego().getText(); 
+			gui.getPanelJuego().getTxtTipoJuego().getText();
+            gui.getPanelJuego().getTxtNombreJuego().getText();
 		}
 		
 		//Jugador
