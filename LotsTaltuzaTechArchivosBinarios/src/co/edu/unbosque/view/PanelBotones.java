@@ -34,11 +34,6 @@ public class PanelBotones extends JPanel{
 		add(labTitulo2);
 	}
 
-	private void labTitulo1(Font font) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public JButton getButJugador() {
 		return butJugador;
 	}

@@ -38,6 +38,9 @@ public class Controller implements ActionListener{
 		gui.getPanelPartida().getButAgregar().addActionListener(this);
 		gui.getPanelPartida().getButLeer().addActionListener(this);
 		gui.getPanelBotones2().getButRegresar().addActionListener(this);
+		gui.getPanelJugador().getButAgregar2().addActionListener(this);
+		gui.getPanelJugador().getButLeer().addActionListener(this);
+		gui.getPanelJugador().getButAgregar2().addActionListener(this);
 	}
 
 	public void actionPerformed(ActionEvent evento) 
@@ -91,23 +94,19 @@ public class Controller implements ActionListener{
 		{
             fachada.getB_file().setRuta(1);
             fachada.getB_file().leerClase();
-            gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getJugador()[0]+"");
-            
-            //fachada.getB_file().getJugador()[0]
+            gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getJugador()[0]+"\n"+fachada.getB_file().getJugador()[1]); 
 		}
 		if (evento.getActionCommand().equals(gui.getPanelJugador().AGREGARJUGADOR)) 
-		{
-			 fachada.getJugador2()[0].setGenero(gui.getPanelJugador().getTxtGenero().getText());
+		{		
+			    fachada.getJugador2()[0].setGenero(gui.getPanelJugador().getTxtGenero().getText());
 	            fachada.getJugador2()[0].setNombre(gui.getPanelJugador().getTxtNombre().getText());
 	            fachada.getJugador2()[0].setEdad(Integer.parseInt(gui.getPanelJugador().getTxtEdad().getText()));
 	            fachada.getJugador2()[0].setPuntaje(Double.parseDouble(gui.getPanelJugador().getTxtPuntaje().getText()));
 	            
-	            
-	            //cambiar objeto del gui
-	            fachada.getJugador2()[1].setGenero(gui.getPanelJugador().getTxtGenero().getText());
-	            fachada.getJugador2()[1].setNombre(gui.getPanelJugador().getTxtNombre().getText());
-	            fachada.getJugador2()[1].setEdad(Integer.parseInt(gui.getPanelJugador().getTxtEdad().getText()));
-	            fachada.getJugador2()[1].setPuntaje(Double.parseDouble(gui.getPanelJugador().getTxtPuntaje().getText()));
+	            fachada.getJugador2()[1].setGenero(gui.getPanelJugador().getTxtGenero2().getText());
+	            fachada.getJugador2()[1].setNombre(gui.getPanelJugador().getTxtNombre2().getText());
+	            fachada.getJugador2()[1].setEdad(Integer.parseInt(gui.getPanelJugador().getTxtEdad2().getText()));
+	            fachada.getJugador2()[1].setPuntaje(Double.parseDouble(gui.getPanelJugador().getTxtPuntaje2().getText()));
 	            fachada.getB_file().setRuta(1);
 	            fachada.getB_file().escribirClase(fachada.getJugador2());
 		}
@@ -118,7 +117,6 @@ public class Controller implements ActionListener{
             fachada.getB_file().leerClase();
             gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getPartida()[0]+"");
             
-            //gui.getPanelResultados().getTxtObjeto2().setText(null);
 		}
 		if (evento.getActionCommand().equals(gui.getPanelPartida().AGREGAR)) 
 		{
@@ -129,6 +127,7 @@ public class Controller implements ActionListener{
             fachada.getPartida()[0].setTipoPartida(gui.getPanelPartida().getTxtTipoPartida().getText());
             fachada.getB_file().setRuta(3);
             fachada.getB_file().escribirClase(fachada.getPartida());
+   
 
 		}
 		if (evento.getActionCommand().equals(gui.getPanelBotones2().INICIO)) {
@@ -139,6 +138,7 @@ public class Controller implements ActionListener{
 			gui.getPanelBotones().setVisible(true);
 			gui.getContentPane().add(gui.getPanelBotones(),BorderLayout.CENTER);
 			gui.getPanelBotones2().setVisible(false);
+			gui.getPanelResultados().getTxtObjeto1().setText("");
 
 		}
 	}

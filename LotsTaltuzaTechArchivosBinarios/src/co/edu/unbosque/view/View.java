@@ -1,19 +1,18 @@
 package co.edu.unbosque.view;
-
 import java.awt.BorderLayout;
 import java.awt.Component;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import co.edu.unbosque.controller.Controller;
-//
+
 
 public class View extends JFrame{
 
-	//Constante generada por Eclipse  
+	
 	private static final long serialVersionUID = 1L;
-	private PanelJugador1 panelJugador; //Se declara un objeto de tipo PanelEntrada
-	private PanelResultados panelResultados; //Se declara un objeto de tipo PanelResultados
+	private PanelJugador1 panelJugador; 
+	private PanelResultados panelResultados; 
 	private PanelJuego panelJuego;
 	private PanelPartida panelPartida;
 	private PanelBotones panelBotones;
@@ -37,17 +36,6 @@ public class View extends JFrame{
 		panelResultados = new PanelResultados();
 		panelBotones2.setVisible(false);
 		panelResultados.setVisible(false);
-
-
-//		add(panelBotones);
-		
-		//se agrega al boton ActionListener del objeto de Controlador - cambio
-//		panelJugador.getButAgregar().addActionListener(control);
-//		panelJugador.getButLeer().addActionListener(control);
-//		panelJuego.getButAgregar().addActionListener(control);
-//		panelJuego.getButLeer().addActionListener(control);
-//		panelPartida.getButAgregar().addActionListener(control);
-//		panelPartida.getButLeer().addActionListener(control);
 		
 	}
 
@@ -106,13 +94,6 @@ public class View extends JFrame{
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}
-
-	public void mostrarCifras(int numReg, double numeros[], int valores[]) {
-		for (int i= 0 ; i<numReg ; i++) {
-			getPanelResultados().getTxtObjeto1().append(String.valueOf(numeros[i])+"\n");
-			getPanelResultados().getTxtObjeto2().append(String.valueOf(valores[i])+"\n");
-		}	
 	}
 
 	public PanelBotones getPanelBotones() {

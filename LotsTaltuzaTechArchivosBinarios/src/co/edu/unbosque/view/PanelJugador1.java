@@ -23,7 +23,6 @@ public class PanelJugador1 extends JPanel{
 	private JLabel labGenero;
 	private JTextField txtGenero;
 	private JTextField txtPuntaje;
-	private JButton butAgregar;
 	private JButton butLeer;
 	private JLabel labPuntaje;
 	private JLabel labVacio1;
@@ -179,19 +178,6 @@ public class PanelJugador1 extends JPanel{
 	}
 
 
-
-	public JButton getButAgregar() {
-		return butAgregar;
-	}
-
-
-
-	public void setButAgregar(JButton butAgregar) {
-		this.butAgregar = butAgregar;
-	}
-
-
-
 	public static String getAgregar() {
 		return AGREGARJUGADOR;
 	}
@@ -300,18 +286,6 @@ public class PanelJugador1 extends JPanel{
 
 
 
-	public Component getTxtPuntaje2() {
-		return txtPuntaje2;
-	}
-
-
-
-	public void setTxtPuntaje2(Component txtPuntaje2) {
-		this.txtPuntaje2 = txtPuntaje2;
-	}
-
-
-
 	public Component getLabPuntaje2() {
 		return labPuntaje2;
 	}
@@ -323,19 +297,6 @@ public class PanelJugador1 extends JPanel{
 	}
 
 
-
-	public Component getTxtGenero2() {
-		return txtGenero2;
-	}
-
-
-
-	public void setTxtGenero2(Component txtGenero2) {
-		this.txtGenero2 = txtGenero2;
-	}
-
-
-
 	public Component getLabGenero2() {
 		return labGenero2;
 	}
@@ -345,8 +306,30 @@ public class PanelJugador1 extends JPanel{
 	public void setLabGenero2(Component labGenero2) {
 		this.labGenero2 = labGenero2;
 	}
-	
 
 
+
+	public JTextField getTxtPuntaje2() {
+		return (JTextField) txtPuntaje2;
+	}
+
+
+
+	public void setTxtPuntaje2(JTextField txtPuntaje2) {
+		this.txtPuntaje2 = txtPuntaje2;
+	}
+
+
+
+	public JTextField getTxtGenero2() {
+		return (JTextField) txtGenero2;
+	}
+
+
+
+	public void setTxtGenero2(JTextField txtGenero2) {
+		this.txtGenero2 = txtGenero2;
+	}
 	
+
 }
