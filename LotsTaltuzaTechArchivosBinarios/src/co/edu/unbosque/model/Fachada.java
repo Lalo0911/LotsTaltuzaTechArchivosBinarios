@@ -18,7 +18,7 @@ public class Fachada {
 		jugador2[0] = new Jugador(null, 0, null, 0);
 		jugador2[1] = new Jugador(null, 0, null, 0);
 		bf = new BinariosFile();
-		//holaA
+		//holaAa
 	}
 	
 	public BinariosFile getBf() {
