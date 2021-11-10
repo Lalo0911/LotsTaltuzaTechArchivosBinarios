@@ -97,7 +97,7 @@ public class Controller implements ActionListener{
 		}
 			
 			
-		//Partida
+		//Partidaa
 		if (evento.getActionCommand().equals("LEER")) 
 		{
 			
