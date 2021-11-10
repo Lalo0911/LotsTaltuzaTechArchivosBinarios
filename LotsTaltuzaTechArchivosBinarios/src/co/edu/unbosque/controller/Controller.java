@@ -37,11 +37,9 @@ public class Controller implements ActionListener{
 		JOptionPane.showMessageDialog(null, fachada.getB_file().getJugador()[0]);
 		
 		
-		fachada.getJuego()[0].setNombre("Prueba2");
-		fachada.getJuego()[0].setTipo("Prueba4");
-		fachada.getB_file().setRuta(2);
-		fachada.getB_file().escribirClase(fachada.getJuego());
-		fachada.getB_file().leerClase();
+		
+		
+		
 		JOptionPane.showMessageDialog(null, fachada.getB_file().getJuego()[0]);
 		
 		
@@ -75,13 +73,16 @@ public class Controller implements ActionListener{
 		//Juego
 		if (evento.getActionCommand().equals("LEER")) 
 		{
+			fachada.getB_file().setRuta(2);
+			fachada.getB_file().leerClase();
 			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getJuego()[0]+"");
-			//fachada.getB_file().getJuego()[0]
 		}
 		if (evento.getActionCommand().equals("AGREGAR")) 
 		{	
-			gui.getPanelJuego().getTxtTipoJuego().getText();
-            gui.getPanelJuego().getTxtNombreJuego().getText();
+			fachada.getJuego()[0].setNombre(gui.getPanelJuego().getTxtNombreJuego().getText());
+			fachada.getJuego()[0].setTipo(gui.getPanelJuego().getTxtTipoJuego().getText());
+			fachada.getB_file().setRuta(2);
+			fachada.getB_file().escribirClase(fachada.getJuego());
 		}
 		
 		//Jugador
