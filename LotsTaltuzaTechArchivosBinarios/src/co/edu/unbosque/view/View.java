@@ -40,12 +40,12 @@ public class View extends JFrame{
 		add(panelResultados,BorderLayout.EAST);
 		
 		//se agrega al boton ActionListener del objeto de Controlador - cambio
-		panelJugador.getButAgregar().addActionListener(control);
-		panelJugador.getButLeer().addActionListener(control);
-		panelJuego.getButAgregar().addActionListener(control);
-		panelJuego.getButLeer().addActionListener(control);
-		panelPartida.getButAgregar().addActionListener(control);
-		panelPartida.getButLeer().addActionListener(control);
+//		panelJugador.getButAgregar().addActionListener(control);
+//		panelJugador.getButLeer().addActionListener(control);
+//		panelJuego.getButAgregar().addActionListener(control);
+//		panelJuego.getButLeer().addActionListener(control);
+//		panelPartida.getButAgregar().addActionListener(control);
+//		panelPartida.getButLeer().addActionListener(control);
 		
 	}
 
