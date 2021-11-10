@@ -60,21 +60,58 @@ public class Controller implements ActionListener{
 		
 	 gui.getPanelJuego().getButLeer().addActionListener(this);
 	 gui.getPanelJuego().getButAgregar().addActionListener(this);
-       
+	 
+	 gui.getPanelJugador().getButLeer().addActionListener(this);
+	 gui.getPanelJugador().getButAgregar().addActionListener(this);
+	 
+	 gui.getPanelPartida().getButLeer().addActionListener(this);
+	 gui.getPanelPartida().getButAgregar().addActionListener(this);
+	 
 	}
 	
 	public void actionPerformed(ActionEvent evento) 
 	{
 		
-		
+		//Juego
 		if (evento.getActionCommand().equals("LEER")) 
 		{
-			System.out.println(gui.getPanelJuego().getTxtJuego().getText()); 
-			
-			}
+			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getJuego()[0]+"");
+			//fachada.getB_file().getJuego()[0]
+		}
+		if (evento.getActionCommand().equals("AGREGAR")) 
+		{	
+			gui.getPanelJuego().getTxtJuego().getText(); 
+		}
+		
+		//Jugador
+		if (evento.getActionCommand().equals("LEER")) 
+		{
+			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getJugador()[0]+"");
+			//fachada.getB_file().getJugador()[0]
+		}
 		if (evento.getActionCommand().equals("AGREGAR")) 
 		{
+			gui.getPanelJugador().getTxtNombre().getText(); 
+			gui.getPanelJugador().getTxtEdad().getText();
+			gui.getPanelJugador().getTxtGenero().getText();	
+		}
 			
-			}
+			
+		//Partida
+		if (evento.getActionCommand().equals("LEER")) 
+		{
+			
+			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getPartida()[0]+"");
+			
+			//gui.getPanelResultados().getTxtObjeto2().setText(null);
+		}
+		if (evento.getActionCommand().equals("AGREGAR")) 
+		{
+			gui.getPanelPartida().getTxtJugador1().getText();
+			gui.getPanelPartida().getTxtPuntaje1().getText();
+			gui.getPanelPartida().getTxtJugador2().getText();
+			gui.getPanelPartida().getTxtPuntaje2().getText();
+		}
+			
 	}
 }
