@@ -1,18 +1,21 @@
 package co.edu.unbosque.view;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import co.edu.unbosque.controller.Controller;
-import co.edu.unbosque.model.persistence.Registro;
+
 
 public class View extends JFrame{
 
 	//Constante generada por Eclipse  
 	private static final long serialVersionUID = 1L;
-	private PanelJugador1 panelEntrada; //Se declara un objeto de tipo PanelEntrada
+	private PanelJugador1 panelJugador; //Se declara un objeto de tipo PanelEntrada
 	private PanelResultados panelResultados; //Se declara un objeto de tipo PanelResultados
-	private PanelRegistro panelRegistro;
+	private PanelJuego panelJuego;
+	private PanelPartida panelPartida;
 	
 	public View(Controller control) 
 	{
@@ -26,35 +29,40 @@ public class View extends JFrame{
 		//Establece el layout (lienzo) que vamos a utilizar dentro de la ventana principal.
 		setLayout( new BorderLayout() );
 		//Se agrega al layout en la parte NORTH, el panel de entrada definido
-		panelEntrada = new PanelJugador1();
-		add(panelEntrada,BorderLayout.NORTH);
+		panelJugador = new PanelJugador1();
+		add(panelJugador,BorderLayout.NORTH);
 		//Se agrega al layout en la parte CENTER, el panel de entrada definido
 		panelResultados = new PanelResultados();
-		add(panelResultados,BorderLayout.CENTER);
-		panelRegistro = new PanelRegistro();
-		add(panelRegistro,BorderLayout.SOUTH);
+		add(panelJuego,BorderLayout.CENTER);
+		panelJuego = new PanelJuego();
+		add(panelPartida,BorderLayout.SOUTH);
+		panelResultados = new PanelResultados();
+		add(panelResultados,BorderLayout.EAST);
 		
 		//se agrega al boton ActionListener del objeto de Controlador - cambio
-		panelEntrada.getButEscribir().addActionListener(control);
-		panelEntrada.getButLeer().addActionListener(control);
-		panelEntrada.getButLeerReg().addActionListener(control);
-		panelEntrada.getButEscribirReg().addActionListener(control);
+		panelJugador.getButAgregar().addActionListener(control);
+		panelJugador.getButLeer().addActionListener(control);
+		panelJuego.getButAgregar().addActionListener(control);
+		panelJuego.getButLeer().addActionListener(control);
+		panelPartida.getButAgregar().addActionListener(control);
+		panelPartida.getButLeer().addActionListener(control);
+		
 	}
 
 	public PanelJugador1 getPanelEntrada() {
-		return panelEntrada;
+		return panelJugador;
 	}
 
-	public void setPanelEntrada(PanelJugador1 panelEntrada) {
-		this.panelEntrada = panelEntrada;
+	public void setPanelEntrada(PanelJugador1 panelJugador) {
+		this.panelJugador = panelJugador;
 	}
 
-	public PanelRegistro getPanelRegistro() {
-		return panelRegistro;
+	public PanelJuego getPanelRegistro() {
+		return panelJuego;
 	}
 
-	public void setPanelRegistro(PanelRegistro panelRegistro) {
-		this.panelRegistro = panelRegistro;
+	public void setPanelRegistro(PanelJuego panelJuego) {
+		this.panelJuego = panelJuego;
 	}
 
 	public PanelResultados getPanelResultados() {
@@ -69,19 +77,39 @@ public class View extends JFrame{
 		JOptionPane.showMessageDialog(null, mensaje, "archivos binarios", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
+	
+	public PanelJugador1 getPanelJugador() {
+		return panelJugador;
+	}
+
+	public void setPanelJugador(PanelJugador1 panelJugador) {
+		this.panelJugador = panelJugador;
+	}
+
+	public PanelJuego getPanelJuego() {
+		return panelJuego;
+	}
+
+	public void setPanelJuego(PanelJuego panelJuego) {
+		this.panelJuego = panelJuego;
+	}
+
+	public PanelPartida getPanelPartida() {
+		return panelPartida;
+	}
+
+	public void setPanelPartida(PanelPartida panelPartida) {
+		this.panelPartida = panelPartida;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public void mostrarCifras(int numReg, double numeros[], int valores[]) {
 		for (int i= 0 ; i<numReg ; i++) {
-			getPanelResultados().getTxtMonto().append(String.valueOf(numeros[i])+"\n");
-			getPanelResultados().getTxtValores().append(String.valueOf(valores[i])+"\n");
+			getPanelResultados().getTxtObjeto1().append(String.valueOf(numeros[i])+"\n");
+			getPanelResultados().getTxtObjeto2().append(String.valueOf(valores[i])+"\n");
 		}	
 	}	
-
-	public void mostrarRegistros(int numReg, Registro[] datos) {
-		for (int i= 0 ; i<numReg ; i++) {
-			getPanelRegistro().getTxtEdad().append(String.valueOf(datos[i].getEdad())+"\n");
-			getPanelRegistro().getTxtNombre().append(String.valueOf(datos[i].getNombre())+"\n");
-			getPanelRegistro().getTxtSalario().append(String.valueOf(datos[i].getSalario())+"\n");
-		}	
-	}
-	
 }

@@ -9,7 +9,7 @@ import co.edu.unbosque.model.Fachada;
 import co.edu.unbosque.view.View;
 
 
-public class Controller {
+public class Controller implements ActionListener {
 
 	private Fachada bd;
 //	private View gui;
@@ -56,6 +56,11 @@ public class Controller {
 //		gui.setVisible(true); //hacer visible la ventana principal
 		
 	}
+@Override
+public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
+	
+}
 	
 	
 

@@ -14,37 +14,46 @@ public class PanelJugador1 extends JPanel{
 	
 	private static final long serialVersionUID = 1L;
 
-
+	public static final String AGREGAR = "Agregar";
+	public static final String LEER = "Leer";
 	private JLabel labNombre;
 	private JTextField txtNombre;
 	private JLabel labEdad;
 	private JTextField txtEdad;
 	private JLabel labGenero;
 	private JTextField txtGenero;
+	private JButton butAgregar;
+	private JButton butLeer;
+
+
 	
 	public PanelJugador1() {
 		setLayout( new GridLayout(3,3) );//se define el grid de 3x3
 		TitledBorder border = BorderFactory.createTitledBorder("Jugador 1");
 		border.setTitleColor(Color.BLACK);
 		setBorder( border );
-		labNombre = new JLabel("Nombre 1:");
+		labNombre = new JLabel("Nombre:");
 		add(labNombre);
 		txtNombre = new JTextField("");
 		txtNombre.setForeground(Color.BLACK);
 		txtNombre.setBackground(Color.WHITE);
 		add(txtNombre);
-		labEdad = new JLabel("Edad 1:");
+		labEdad = new JLabel("Edad:");
 		add(labEdad);
 		txtEdad = new JTextField("");
 		txtEdad.setForeground(Color.BLACK);
 		txtEdad.setBackground(Color.WHITE);
 		add(txtEdad);
-		labGenero = new JLabel("Genero 1:");
+		labGenero = new JLabel("Genero:");
 		add(labGenero);
 		txtGenero = new JTextField("");
 		txtGenero.setForeground(Color.BLACK);
 		txtGenero.setBackground(Color.WHITE);
 		add(txtGenero);
+		butAgregar = new JButton("Escribir");
+		butAgregar.setActionCommand(AGREGAR);
+		butLeer = new JButton("Leer");
+		butLeer.setActionCommand(LEER);
 	}
 	
 
@@ -100,6 +109,43 @@ public class PanelJugador1 extends JPanel{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+
+
+	public JButton getButAgregar() {
+		return butAgregar;
+	}
+
+
+
+	public void setButAgregar(JButton butAgregar) {
+		this.butAgregar = butAgregar;
+	}
+
+
+
+	public static String getAgregar() {
+		return AGREGAR;
+	}
+
+
+
+	public JButton getButLeer() {
+		return butLeer;
+	}
+
+
+
+	public void setButLeer(JButton butLeer) {
+		this.butLeer = butLeer;
+	}
+
+
+
+	public static String getLeer() {
+		return LEER;
+	}
+	
 
 
 	
