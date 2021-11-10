@@ -35,4 +35,9 @@ public class Juego implements Serializable{
 		return serialVersionUID;
 	}
 
+	@Override
+	public String toString() {
+		return "Juego [nombre=" + nombre + ", tipo=" + tipo + "]";
+	}
+	
 }

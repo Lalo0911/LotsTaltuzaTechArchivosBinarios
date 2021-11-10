@@ -3,56 +3,45 @@ import co.edu.unbosque.model.persistence.BinariosFile;
 
 public class Fachada {
 	
-	private Juego juego;
-	private Jugador jugador;
-	private Partida partida;
-	private BinariosFile bf;
+	private BinariosFile b_file;
 	private Jugador[] jugador2;
-	private Juego[] jugo;
-	private Partida[] partida2;
+	private Juego[] juego;
+	private Partida[] partida;
 	
 	public Fachada() {
-		
-		juego = new Juego("","");
-		jugador = new Jugador("",0,"",0);
-		partida = new Partida("","","",0,0);
+		juego = new Juego[1];
+		juego[0] = new Juego(null,null);
+		partida = new Partida[1];
+		partida[0] = new Partida("","","",0,0);
 		jugador2 = new Jugador[2];
 		jugador2[0] = new Jugador(null, 0, null, 0);
 		jugador2[1] = new Jugador(null, 0, null, 0);
-		bf = new BinariosFile();
+		b_file = new BinariosFile();
 		
 	}
 	
-	public BinariosFile getBf() {
-		return bf;
+	public BinariosFile getB_file() {
+		return b_file;
 	}
 
-	public Juego getJuego() {
+	public void setB_file(BinariosFile b_file) {
+		this.b_file = b_file;
+	}
+
+	public Juego[] getJuego() {
 		return juego;
 	}
 
-	public Jugador getJugador() {
-		return jugador;
-	}
-
-	public Partida getPartida() {
-		return partida;
-	}
-
-	public void setJuego(Juego juego) {
+	public void setJuego(Juego[] juego) {
 		this.juego = juego;
 	}
 
-	public void setJugador(Jugador jugador) {
-		this.jugador = jugador;
+	public Partida[] getPartida() {
+		return partida;
 	}
 
-	public void setPartida(Partida partida) {
+	public void setPartida(Partida[] partida) {
 		this.partida = partida;
-	}
-
-	public void setBf(BinariosFile bf) {
-		this.bf = bf;
 	}
 
 	public Jugador[] getJugador2() {

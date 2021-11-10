@@ -11,27 +11,32 @@ import co.edu.unbosque.view.View;
 
 public class Controller {
 
-	private Fachada bd;
+	private Fachada fachada;
 //	private View gui;
 	
 	public Controller() {
 
 		
-		bd = new Fachada();
+		fachada = new Fachada();
 		
 		for(int i=0;i<2;i++){
-		bd.getJugador2()[i].setGenero(JOptionPane.showInputDialog("Ingresar genero"));
-		bd.getJugador2()[i].setNombre(JOptionPane.showInputDialog("Ingresar nombre"));
-		bd.getJugador2()[i].setEdad(Integer.parseInt(JOptionPane.showInputDialog("Ingresar edad")));
-		bd.getJugador2()[i].setPuntaje(Double.parseDouble(JOptionPane.showInputDialog("Ingresar puntaje")));
+		fachada.getJugador2()[i].setGenero("Genero");
+		fachada.getJugador2()[i].setNombre("Nombre");
+		fachada.getJugador2()[i].setEdad(3101);
+		fachada.getJugador2()[i].setPuntaje(1010+i);
 		}
 		
-		bd.getBf().setRuta(1);
-		bd.getBf().escribirClase(bd.getJugador2());
-		bd.getBf().escribirClase(bd.getJugador2());
-		bd.getBf().leerClase();
-		JOptionPane.showMessageDialog(null, bd.getBf().getJugador()[0]);
+		fachada.getB_file().setRuta(1);
+		fachada.getB_file().escribirClase(fachada.getJugador2());
+		fachada.getB_file().leerClase();
+		JOptionPane.showMessageDialog(null, fachada.getB_file().getJugador()[0]);
 		
+		fachada.getJuego()[0].setNombre("Prueba2");
+		fachada.getJuego()[0].setTipo("Prueba4");
+		fachada.getB_file().setRuta(2);
+		fachada.getB_file().escribirClase(fachada.getJuego());
+		fachada.getB_file().leerClase();
+		JOptionPane.showMessageDialog(null, fachada.getB_file().getJuego()[0]);
 	}
 	
 }

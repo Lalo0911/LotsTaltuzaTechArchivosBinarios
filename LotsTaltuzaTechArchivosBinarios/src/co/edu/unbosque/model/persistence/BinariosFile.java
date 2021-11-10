@@ -19,7 +19,7 @@ public class BinariosFile {
 	public BinariosFile() {
 	jugador = new Jugador[2];
 	juego = new Juego[1];
-	partida = new Partida[((int) Math.random()*10)+1];
+	partida = new Partida[1];
 	}
 	
 	public String escribirClase(Object[] objeto) {
@@ -45,7 +45,7 @@ public class BinariosFile {
 		try {
 	 		in = new ObjectInputStream(new FileInputStream(ruta));
   			if(ruta.equals("./Data/jugadores.dat")){
-  			jugador = (Jugador[]) in.readObject();
+  				jugador = (Jugador[]) in.readObject();
 			}else if(ruta.equals("./Data/juegos.dat")){
 				juego = (Juego[]) in.readObject();
 			}else{
