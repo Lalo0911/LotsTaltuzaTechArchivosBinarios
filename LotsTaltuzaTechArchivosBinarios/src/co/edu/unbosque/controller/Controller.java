@@ -15,7 +15,6 @@ public class Controller {
 //	private View gui;
 	
 	public Controller() {
-
 		
 		fachada = new Fachada();
 		
@@ -37,6 +36,18 @@ public class Controller {
 		fachada.getB_file().escribirClase(fachada.getJuego());
 		fachada.getB_file().leerClase();
 		JOptionPane.showMessageDialog(null, fachada.getB_file().getJuego()[0]);
+		
+		fachada.getPartida()[0].setJugador1("he");
+		fachada.getPartida()[0].setJugador2("hola");
+		fachada.getPartida()[0].setPuntaje1(0);
+		fachada.getPartida()[0].setPuntaje2(0);
+		fachada.getPartida()[0].setTipoPartida("se cago");
+		fachada.getB_file().setRuta(3);
+		fachada.getB_file().escribirClase(fachada.getPartida());
+		fachada.getB_file().leerClase();
 	}
 	
+	public void actionPerformed(ActionEvent evento) {
+		
+	}
 }
