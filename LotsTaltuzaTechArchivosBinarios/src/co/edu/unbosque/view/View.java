@@ -21,7 +21,7 @@ public class View extends JFrame{
 	
 	public View(Controller control) {
 		
-		setSize(400,300); 
+		setSize(400,350); 
 		setResizable(false); 
 		setTitle("Lots Taltuza Tech"); 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

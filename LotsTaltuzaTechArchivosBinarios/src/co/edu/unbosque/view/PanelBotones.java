@@ -1,6 +1,6 @@
 package co.edu.unbosque.view;
 
-import java.awt.GridLayout;
+import java.awt.*;
 
 import javax.swing.*;
 
@@ -18,7 +18,8 @@ public class PanelBotones extends JPanel{
 
 	public PanelBotones() {
 		setLayout( new GridLayout(5,1) );
-		labTitulo1 = new JLabel("");
+		labTitulo1 = new JLabel("LOTS TALTUZA TECH", SwingConstants.CENTER);
+		labTitulo1.setFont((new Font("Bahnschrift",Font.BOLD,20)));
 		add(labTitulo1);
 		butJugador = new JButton("Jugador");
 		butJugador.setActionCommand(JUGADOR);
@@ -31,6 +32,11 @@ public class PanelBotones extends JPanel{
 		add(butPartida);
 		labTitulo2 = new JLabel("");
 		add(labTitulo2);
+	}
+
+	private void labTitulo1(Font font) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public JButton getButJugador() {

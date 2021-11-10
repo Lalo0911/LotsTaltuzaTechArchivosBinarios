@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
@@ -25,16 +26,26 @@ public class PanelJugador1 extends JPanel{
 	private JButton butAgregar;
 	private JButton butLeer;
 	private JLabel labPuntaje;
+	private JLabel labVacio1;
+	private JLabel labVacio2;
+	private JTextField txtNombre2;
+	private Component labEdad2;
+	private JTextField txtEdad2;
+	private JButton butAgregar2;
+	private Component txtPuntaje2;
+	private Component labPuntaje2;
+	private Component txtGenero2;
+	private Component labGenero2;
 
 
 	
 	public PanelJugador1() {
-		setLayout( new GridLayout(5,2) );
+		setLayout( new GridLayout(11,2) );
 		TitledBorder border = BorderFactory.createTitledBorder("Jugador");
 		border.setTitleColor(Color.BLACK);
 		setBorder( border );
 		
-		labNombre = new JLabel("Nombre:");
+		labNombre = new JLabel("Nombre 1:");
 		add(labNombre);
 		
 		txtNombre = new JTextField("");
@@ -42,7 +53,7 @@ public class PanelJugador1 extends JPanel{
 		txtNombre.setBackground(Color.WHITE);
 		add(txtNombre);
 		
-		labEdad = new JLabel("Edad:");
+		labEdad = new JLabel("Edad 1:");
 		add(labEdad);
 		
 		txtEdad = new JTextField("");
@@ -50,7 +61,7 @@ public class PanelJugador1 extends JPanel{
 		txtEdad.setBackground(Color.WHITE);
 		add(txtEdad);
 		
-		labGenero = new JLabel("Genero:");
+		labGenero = new JLabel("Genero 1:");
 		add(labGenero);
 		
 		txtGenero = new JTextField("");
@@ -58,7 +69,7 @@ public class PanelJugador1 extends JPanel{
 		txtGenero.setBackground(Color.WHITE);
 		add(txtGenero);
 		
-		labPuntaje = new JLabel("Puntaje:");
+		labPuntaje = new JLabel("Puntaje 1:");
 		add(labPuntaje);
 		
 		txtPuntaje = new JTextField("");
@@ -66,9 +77,47 @@ public class PanelJugador1 extends JPanel{
 		txtPuntaje.setBackground(Color.WHITE);
 		add(txtPuntaje);
 		
-		butAgregar = new JButton("Escribir");
-		butAgregar.setActionCommand(AGREGARJUGADOR);
-		add(butAgregar);
+		labVacio1 = new JLabel("");
+		add(labVacio1);
+		
+		labVacio2 = new JLabel("");
+		add(labVacio2);
+		
+		labNombre = new JLabel("Nombre 2:");
+		add(labNombre);
+		
+		txtNombre2 = new JTextField("");
+		txtNombre2.setForeground(Color.BLACK);
+		txtNombre2.setBackground(Color.WHITE);
+		add(txtNombre2);
+		
+		labEdad2 = new JLabel("Edad 2:");
+		add(labEdad2);
+		
+		txtEdad2 = new JTextField("");
+		txtEdad2.setForeground(Color.BLACK);
+		txtEdad2.setBackground(Color.WHITE);
+		add(txtEdad2);
+		
+		labGenero2 = new JLabel("Genero 2:");
+		add(labGenero2);
+		
+		txtGenero2 = new JTextField("");
+		txtGenero2.setForeground(Color.BLACK);
+		txtGenero2.setBackground(Color.WHITE);
+		add(txtGenero2);
+		
+		labPuntaje2 = new JLabel("Puntaje 2:");
+		add(labPuntaje2);
+		
+		txtPuntaje2 = new JTextField("");
+		txtPuntaje2.setForeground(Color.BLACK);
+		txtPuntaje2.setBackground(Color.WHITE);
+		add(txtPuntaje2);
+		
+		butAgregar2 = new JButton("Escribir");
+		butAgregar2.setActionCommand(AGREGARJUGADOR);
+		add(butAgregar2);
 		
 		butLeer = new JButton("Leer");
 		butLeer.setActionCommand(LEERJUGADOR);
@@ -187,6 +236,114 @@ public class PanelJugador1 extends JPanel{
 
 	public static String getLeerjugador() {
 		return LEERJUGADOR;
+	}
+
+
+
+	public JLabel getLabPuntaje() {
+		return labPuntaje;
+	}
+
+
+
+	public void setLabPuntaje(JLabel labPuntaje) {
+		this.labPuntaje = labPuntaje;
+	}
+
+
+
+	public JTextField getTxtNombre2() {
+		return txtNombre2;
+	}
+
+
+
+	public void setTxtNombre2(JTextField txtNombre2) {
+		this.txtNombre2 = txtNombre2;
+	}
+
+
+
+	public Component getLabEdad2() {
+		return labEdad2;
+	}
+
+
+
+	public void setLabEdad2(Component labEdad2) {
+		this.labEdad2 = labEdad2;
+	}
+
+
+
+	public JTextField getTxtEdad2() {
+		return txtEdad2;
+	}
+
+
+
+	public void setTxtEdad2(JTextField txtEdad2) {
+		this.txtEdad2 = txtEdad2;
+	}
+
+
+
+	public JButton getButAgregar2() {
+		return butAgregar2;
+	}
+
+
+
+	public void setButAgregar2(JButton butAgregar2) {
+		this.butAgregar2 = butAgregar2;
+	}
+
+
+
+	public Component getTxtPuntaje2() {
+		return txtPuntaje2;
+	}
+
+
+
+	public void setTxtPuntaje2(Component txtPuntaje2) {
+		this.txtPuntaje2 = txtPuntaje2;
+	}
+
+
+
+	public Component getLabPuntaje2() {
+		return labPuntaje2;
+	}
+
+
+
+	public void setLabPuntaje2(Component labPuntaje2) {
+		this.labPuntaje2 = labPuntaje2;
+	}
+
+
+
+	public Component getTxtGenero2() {
+		return txtGenero2;
+	}
+
+
+
+	public void setTxtGenero2(Component txtGenero2) {
+		this.txtGenero2 = txtGenero2;
+	}
+
+
+
+	public Component getLabGenero2() {
+		return labGenero2;
+	}
+
+
+
+	public void setLabGenero2(Component labGenero2) {
+		this.labGenero2 = labGenero2;
 	}
 	
 
