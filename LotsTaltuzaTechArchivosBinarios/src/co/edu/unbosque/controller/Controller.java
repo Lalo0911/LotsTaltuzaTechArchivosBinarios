@@ -18,7 +18,7 @@ public class Controller {
 
 		
 		bd = new Fachada();
-	
+	//Nelson es gei
 		//Jugador 
 		for(int i=0;i<2;i++){
 		bd.getJugador2()[i].setGenero(JOptionPane.showInputDialog("Ingresar genero"));
