@@ -21,37 +21,55 @@ public class PanelJugador1 extends JPanel{
 	private JTextField txtEdad;
 	private JLabel labGenero;
 	private JTextField txtGenero;
+	private JTextField txtPuntaje;
 	private JButton butAgregar;
 	private JButton butLeer;
+	private JLabel labPuntaje;
 
 
 	
 	public PanelJugador1() {
-		setLayout( new GridLayout(4,2) );
+		setLayout( new GridLayout(5,2) );
 		TitledBorder border = BorderFactory.createTitledBorder("Jugador");
 		border.setTitleColor(Color.BLACK);
 		setBorder( border );
+		
 		labNombre = new JLabel("Nombre:");
 		add(labNombre);
+		
 		txtNombre = new JTextField("");
 		txtNombre.setForeground(Color.BLACK);
 		txtNombre.setBackground(Color.WHITE);
 		add(txtNombre);
+		
 		labEdad = new JLabel("Edad:");
 		add(labEdad);
+		
 		txtEdad = new JTextField("");
 		txtEdad.setForeground(Color.BLACK);
 		txtEdad.setBackground(Color.WHITE);
 		add(txtEdad);
+		
 		labGenero = new JLabel("Genero:");
 		add(labGenero);
+		
 		txtGenero = new JTextField("");
 		txtGenero.setForeground(Color.BLACK);
 		txtGenero.setBackground(Color.WHITE);
 		add(txtGenero);
+		
+		labPuntaje = new JLabel("Puntaje:");
+		add(labPuntaje);
+		
+		txtPuntaje = new JTextField("");
+		txtPuntaje.setForeground(Color.BLACK);
+		txtPuntaje.setBackground(Color.WHITE);
+		add(txtPuntaje);
+		
 		butAgregar = new JButton("Escribir");
 		butAgregar.setActionCommand(AGREGARJUGADOR);
 		add(butAgregar);
+		
 		butLeer = new JButton("Leer");
 		butLeer.setActionCommand(LEERJUGADOR);
 		add(butLeer);
@@ -144,6 +162,30 @@ public class PanelJugador1 extends JPanel{
 
 
 	public static String getLeer() {
+		return LEERJUGADOR;
+	}
+
+
+
+	public JTextField getTxtPuntaje() {
+		return txtPuntaje;
+	}
+
+
+
+	public void setTxtPuntaje(JTextField txtPuntaje) {
+		this.txtPuntaje = txtPuntaje;
+	}
+
+
+
+	public static String getAgregarjugador() {
+		return AGREGARJUGADOR;
+	}
+
+
+
+	public static String getLeerjugador() {
 		return LEERJUGADOR;
 	}
 	

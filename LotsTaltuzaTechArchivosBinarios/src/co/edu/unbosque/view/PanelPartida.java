@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
@@ -27,39 +28,60 @@ public class PanelPartida extends JPanel{
 	private JLabel labPuntaje2;
 	private JTextField txtPuntaje2;
 
+	private JTextField txtTipoPartida;
+
+	private Component labTipoPartida;
+
 	
 	public PanelPartida() {
-		setLayout( new GridLayout(5,5) );
+		setLayout( new GridLayout(6,2) );
 		TitledBorder border = BorderFactory.createTitledBorder("Partida");
 		border.setTitleColor(Color.BLACK);
 		setBorder( border );
 		labJugador1 = new JLabel("Jugador 1");
 		add(labJugador1);
+		
 		txtJugador1 = new JTextField("");
 		txtJugador1.setForeground(Color.BLACK);
 		txtJugador1.setBackground(Color.WHITE);
 		add(txtJugador1);
+		
 		labPuntaje1 = new JLabel("Puntaje 1");
 		add(labPuntaje1);
+		
 		txtPuntaje1 = new JTextField("");
 		txtPuntaje1.setForeground(Color.BLACK);
 		txtPuntaje1.setBackground(Color.WHITE);
 		add(txtPuntaje1);
+		
 		labJugador2 = new JLabel("Jugador 2");
 		add(labJugador2);
+		
 		txtJugador2 = new JTextField("");
 		txtJugador2.setForeground(Color.BLACK);
 		txtJugador2.setBackground(Color.WHITE);
 		add(txtJugador2);
+		
 		labPuntaje2 = new JLabel("Puntaje 2");
 		add(labPuntaje2);
+		
 		txtPuntaje2 = new JTextField("");
 		txtPuntaje2.setForeground(Color.BLACK);
 		txtPuntaje2.setBackground(Color.WHITE);
 		add(txtPuntaje2);
+		
+		labTipoPartida = new JLabel("Tipo de Partida");
+		add(labTipoPartida);
+		
+		txtTipoPartida = new JTextField("");
+		txtTipoPartida.setForeground(Color.BLACK);
+		txtTipoPartida.setBackground(Color.WHITE);
+		add(txtTipoPartida);
+		
 		butAgregar = new JButton("Escribir");
 		butAgregar.setActionCommand(AGREGAR);
 		add(butAgregar);
+		
 		butLeer = new JButton("Leer");
 		butLeer.setActionCommand(LEER);
 		add(butLeer);
@@ -201,6 +223,30 @@ public class PanelPartida extends JPanel{
 
 	public static String getLeer() {
 		return LEER;
+	}
+
+
+
+	public JTextField getTxtTipoPartida() {
+		return txtTipoPartida;
+	}
+
+
+
+	public void setTxtTipoPartida(JTextField txtTipoPartida) {
+		this.txtTipoPartida = txtTipoPartida;
+	}
+
+
+
+	public Component getLabTipoPartida() {
+		return labTipoPartida;
+	}
+
+
+
+	public void setLabTipoPartida(Component labTipoPartida) {
+		this.labTipoPartida = labTipoPartida;
 	}
 	
 
