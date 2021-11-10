@@ -21,7 +21,7 @@ public class View extends JFrame{
 	{
 		// Definición de los parámetros básicos de la ventana principal
 		
-		setSize(500,400); //tamaño en ancho y alto en pixeles
+		setSize(900,400); //tamaño en ancho y alto en pixeles
 		setResizable(false); //Se puede cambiar el tamaño de la ventana?
 		setTitle("Lots Taltuza Tech"); //tìtulo de la ventana
 		setDefaultCloseOperation(EXIT_ON_CLOSE);//qué debe hacer si cierra la ventana
