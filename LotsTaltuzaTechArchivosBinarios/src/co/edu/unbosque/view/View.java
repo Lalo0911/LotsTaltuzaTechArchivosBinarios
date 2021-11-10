@@ -19,22 +19,22 @@ public class View extends JFrame{
 	
 	public View(Controller control) 
 	{
-		// Definición de los parámetros básicos de la ventana principal
 		
-		setSize(900,400); //tamaño en ancho y alto en pixeles
-		setResizable(false); //Se puede cambiar el tamaño de la ventana?
-		setTitle("Lots Taltuza Tech"); //tìtulo de la ventana
-		setDefaultCloseOperation(EXIT_ON_CLOSE);//qué debe hacer si cierra la ventana
-		setLocationRelativeTo(null); //coloca la ventana al centro de la pantalla
+		
+		setSize(900,400); 
+		setResizable(false); 
+		setTitle("Lots Taltuza Tech"); 
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null); 
 		//Establece el layout (lienzo) que vamos a utilizar dentro de la ventana principal.
 		setLayout( new BorderLayout() );
 		//Se agrega al layout en la parte NORTH, el panel de entrada definido
 		panelJugador = new PanelJugador1();
 		add(panelJugador,BorderLayout.NORTH);
 		//Se agrega al layout en la parte CENTER, el panel de entrada definido
-		panelResultados = new PanelResultados();
-		add(panelJuego,BorderLayout.CENTER);
 		panelJuego = new PanelJuego();
+		add(panelJuego,BorderLayout.CENTER);
+		panelPartida = new PanelPartida();
 		add(panelPartida,BorderLayout.SOUTH);
 		panelResultados = new PanelResultados();
 		add(panelResultados,BorderLayout.EAST);

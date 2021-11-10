@@ -13,8 +13,8 @@ import javax.swing.border.TitledBorder;
 public class PanelJuego extends JPanel{
 //
 	private JTextArea txtNombre;
-	private JTextArea txtNombreJuego;
-	private JTextArea txtTorneo;
+	//private JTextArea txtNombreJuego;
+	//private JTextArea txtTorneo;
 	private JTextArea txtJuego;
 	private JLabel labArchivo;
 	private JButton butAgregar;
@@ -32,13 +32,13 @@ public class PanelJuego extends JPanel{
 		txtNombre.setForeground(Color.BLACK);
 		txtNombre.setBackground(Color.WHITE);
 	
-		txtTorneo = new JTextArea("");
-		txtTorneo.setForeground(Color.BLACK);
-		txtTorneo.setBackground(Color.WHITE);
+		//txtTorneo = new JTextArea("");
+		//txtTorneo.setForeground(Color.BLACK);
+		//txtTorneo.setBackground(Color.WHITE);
 		
-		txtNombreJuego = new JTextArea("TIPO DE JUEGO:");
-		txtNombreJuego.setForeground(Color.BLACK);
-		txtNombreJuego.setBackground(Color.WHITE);
+		//txtNombreJuego = new JTextArea("TIPO DE JUEGO:");
+		//txtNombreJuego.setForeground(Color.BLACK);
+		//txtNombreJuego.setBackground(Color.WHITE);
 		
 		txtJuego = new JTextArea("");
 		txtJuego.setForeground(Color.BLACK);
@@ -51,8 +51,8 @@ public class PanelJuego extends JPanel{
 		
 		
 		add(txtNombre);
-		add(txtTorneo);
-		add(txtNombreJuego);
+		//add(txtTorneo);
+		//add(txtNombreJuego);
 		add(txtJuego);
 		add(butAgregar);
 		add(butLeer);
@@ -64,22 +64,6 @@ public class PanelJuego extends JPanel{
 
 	public void setTxtNombre(JTextArea txtNombre) {
 		this.txtNombre = txtNombre;
-	}
-
-	public JTextArea getTxtNombreJuego() {
-		return txtNombreJuego;
-	}
-
-	public void setTxtNombreJuego(JTextArea txtNombreJuego) {
-		this.txtNombreJuego = txtNombreJuego;
-	}
-
-	public JTextArea getTxtTorneo() {
-		return txtTorneo;
-	}
-
-	public void setTxtTorneo(JTextArea txtTorneo) {
-		this.txtTorneo = txtTorneo;
 	}
 
 	public JTextArea getTxtJuego() {

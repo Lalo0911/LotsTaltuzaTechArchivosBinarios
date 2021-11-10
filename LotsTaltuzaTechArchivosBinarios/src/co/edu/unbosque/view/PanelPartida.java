@@ -24,11 +24,8 @@ public class PanelPartida extends JPanel{
 	private JTextField txtJugador2;
 	private JButton butAgregar;
 	private JButton butLeer;
-
 	private JLabel labPuntaje2;
-
 	private JTextField txtPuntaje2;
-
 
 	
 	public PanelPartida() {
@@ -62,8 +59,10 @@ public class PanelPartida extends JPanel{
 		add(txtPuntaje2);
 		butAgregar = new JButton("Escribir");
 		butAgregar.setActionCommand(AGREGAR);
+		add(butAgregar);
 		butLeer = new JButton("Leer");
 		butLeer.setActionCommand(LEER);
+		add(butLeer);
 	}
 
 

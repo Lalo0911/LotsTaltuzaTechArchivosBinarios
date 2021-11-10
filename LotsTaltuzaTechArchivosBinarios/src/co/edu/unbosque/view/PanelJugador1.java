@@ -52,8 +52,10 @@ public class PanelJugador1 extends JPanel{
 		add(txtGenero);
 		butAgregar = new JButton("Escribir");
 		butAgregar.setActionCommand(AGREGARJUGADOR);
+		add(butAgregar);
 		butLeer = new JButton("Leer");
 		butLeer.setActionCommand(LEERJUGADOR);
+		add(butLeer);
 	}
 	
 
