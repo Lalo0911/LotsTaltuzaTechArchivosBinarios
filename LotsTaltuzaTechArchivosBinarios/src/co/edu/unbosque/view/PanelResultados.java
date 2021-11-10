@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
-
+//
 public class PanelResultados extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private JLabel labResultado;

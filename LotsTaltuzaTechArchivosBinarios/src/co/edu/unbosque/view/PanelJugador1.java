@@ -11,11 +11,11 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 public class PanelJugador1 extends JPanel{
-	
+	//
 	private static final long serialVersionUID = 1L;
 
-	public static final String AGREGAR = "Agregar";
-	public static final String LEER = "Leer";
+	public static final String AGREGARJUGADOR = "AgregarJugador";
+	public static final String LEERJUGADOR = "LeerJugador";
 	private JLabel labNombre;
 	private JTextField txtNombre;
 	private JLabel labEdad;
@@ -51,9 +51,9 @@ public class PanelJugador1 extends JPanel{
 		txtGenero.setBackground(Color.WHITE);
 		add(txtGenero);
 		butAgregar = new JButton("Escribir");
-		butAgregar.setActionCommand(AGREGAR);
+		butAgregar.setActionCommand(AGREGARJUGADOR);
 		butLeer = new JButton("Leer");
-		butLeer.setActionCommand(LEER);
+		butLeer.setActionCommand(LEERJUGADOR);
 	}
 	
 
@@ -125,7 +125,7 @@ public class PanelJugador1 extends JPanel{
 
 
 	public static String getAgregar() {
-		return AGREGAR;
+		return AGREGARJUGADOR;
 	}
 
 
@@ -143,7 +143,7 @@ public class PanelJugador1 extends JPanel{
 
 
 	public static String getLeer() {
-		return LEER;
+		return LEERJUGADOR;
 	}
 	
 

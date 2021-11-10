@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
-
+//
 public class PanelPartida extends JPanel{
 	
 	private static final long serialVersionUID = 1L;

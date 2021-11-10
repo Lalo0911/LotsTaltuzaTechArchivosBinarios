@@ -11,7 +11,7 @@ import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
 
 public class PanelJuego extends JPanel{
-
+//
 	private JTextArea txtNombre;
 	private JTextArea txtNombreJuego;
 	private JTextArea txtTorneo;

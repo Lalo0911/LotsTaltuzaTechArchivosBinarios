@@ -6,7 +6,7 @@ import java.awt.Component;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import co.edu.unbosque.controller.Controller;
-
+//
 
 public class View extends JFrame{
 
@@ -74,7 +74,7 @@ public class View extends JFrame{
 	}
 
 	public void escribirMensaje(String mensaje) {
-		JOptionPane.showMessageDialog(null, mensaje, "archivos binarios", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, mensaje, "Sistema", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	
