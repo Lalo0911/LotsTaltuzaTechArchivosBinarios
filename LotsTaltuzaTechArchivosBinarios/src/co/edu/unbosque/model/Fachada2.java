@@ -1,7 +1,7 @@
 package co.edu.unbosque.model;
 import co.edu.unbosque.model.persistence.BinariosFile;
 
-public class Fachada {
+public class Fachada2 {
 	
 	private Juego juego;
 	private Jugador jugador;
@@ -9,7 +9,7 @@ public class Fachada {
 	private BinariosFile bf;
 	private Jugador[] jugador2;
 	
-	public Fachada() {
+	public Fachada2() {
 		
 		juego = new Juego("","");
 		jugador = new Jugador("",0,"",0);

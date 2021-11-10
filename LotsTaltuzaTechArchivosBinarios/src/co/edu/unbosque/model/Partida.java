@@ -23,9 +23,11 @@ public class Partida implements Serializable
 		
 	}
 	
+	
 	public String getTipoPartida() {
 		return tipoPartida;
 	}
+
 
 	public void setTipoPartida(String tipoPartida) {
 		this.tipoPartida = tipoPartida;
