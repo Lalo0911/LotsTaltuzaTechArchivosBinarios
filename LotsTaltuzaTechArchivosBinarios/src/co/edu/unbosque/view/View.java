@@ -16,28 +16,30 @@ public class View extends JFrame{
 	private PanelResultados panelResultados; //Se declara un objeto de tipo PanelResultados
 	private PanelJuego panelJuego;
 	private PanelPartida panelPartida;
+	private PanelBotones panelBotones;
+	private PanelBotones2 panelBotones2;
 	
-	public View(Controller control) 
-	{
+	public View(Controller control) {
 		
-		
-		setSize(900,400); 
+		setSize(400,300); 
 		setResizable(false); 
 		setTitle("Lots Taltuza Tech"); 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null); 
-		//Establece el layout (lienzo) que vamos a utilizar dentro de la ventana principal.
 		setLayout( new BorderLayout() );
-		//Se agrega al layout en la parte NORTH, el panel de entrada definido
 		panelJugador = new PanelJugador1();
-		add(panelJugador,BorderLayout.NORTH);
-		//Se agrega al layout en la parte CENTER, el panel de entrada definido
+		panelBotones = new PanelBotones();
+		add(panelBotones,BorderLayout.CENTER);
 		panelJuego = new PanelJuego();
-		add(panelJuego,BorderLayout.CENTER);
+		panelBotones2 = new PanelBotones2();
+		add(panelBotones2,BorderLayout.NORTH);
 		panelPartida = new PanelPartida();
-		add(panelPartida,BorderLayout.SOUTH);
 		panelResultados = new PanelResultados();
-		add(panelResultados,BorderLayout.EAST);
+		panelBotones2.setVisible(false);
+		panelResultados.setVisible(false);
+
+
+//		add(panelBotones);
 		
 		//se agrega al boton ActionListener del objeto de Controlador - cambio
 //		panelJugador.getButAgregar().addActionListener(control);
@@ -111,5 +113,22 @@ public class View extends JFrame{
 			getPanelResultados().getTxtObjeto1().append(String.valueOf(numeros[i])+"\n");
 			getPanelResultados().getTxtObjeto2().append(String.valueOf(valores[i])+"\n");
 		}	
+	}
+
+	public PanelBotones getPanelBotones() {
+		return panelBotones;
+	}
+
+	public void setPanelBotones(PanelBotones panelBotones) {
+		this.panelBotones = panelBotones;
+	}
+
+	public PanelBotones2 getPanelBotones2() {
+		return panelBotones2;
+	}
+
+	public void setPanelBotones2(PanelBotones2 panelBotones2) {
+		this.panelBotones2 = panelBotones2;
 	}	
+	
 }

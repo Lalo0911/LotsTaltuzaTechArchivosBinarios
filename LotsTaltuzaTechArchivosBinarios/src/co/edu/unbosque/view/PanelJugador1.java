@@ -11,9 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 public class PanelJugador1 extends JPanel{
-	//
+	
 	private static final long serialVersionUID = 1L;
-
 	public static final String AGREGARJUGADOR = "AgregarJugador";
 	public static final String LEERJUGADOR = "LeerJugador";
 	private JLabel labNombre;
@@ -22,74 +21,43 @@ public class PanelJugador1 extends JPanel{
 	private JTextField txtEdad;
 	private JLabel labGenero;
 	private JTextField txtGenero;
-	private JLabel labPuntaje;
-	private JTextField txtPuntaje;
 	private JButton butAgregar;
 	private JButton butLeer;
 
 
 	
 	public PanelJugador1() {
-		setLayout( new GridLayout(3,3) );//se define el grid de 3x3
-		TitledBorder border = BorderFactory.createTitledBorder("Jugador 1");
+		setLayout( new GridLayout(4,2) );
+		TitledBorder border = BorderFactory.createTitledBorder("Jugador");
 		border.setTitleColor(Color.BLACK);
 		setBorder( border );
-		
 		labNombre = new JLabel("Nombre:");
 		add(labNombre);
-		
 		txtNombre = new JTextField("");
 		txtNombre.setForeground(Color.BLACK);
 		txtNombre.setBackground(Color.WHITE);
 		add(txtNombre);
-		
 		labEdad = new JLabel("Edad:");
 		add(labEdad);
 		txtEdad = new JTextField("");
 		txtEdad.setForeground(Color.BLACK);
 		txtEdad.setBackground(Color.WHITE);
 		add(txtEdad);
-		
 		labGenero = new JLabel("Genero:");
 		add(labGenero);
 		txtGenero = new JTextField("");
 		txtGenero.setForeground(Color.BLACK);
 		txtGenero.setBackground(Color.WHITE);
 		add(txtGenero);
-		
-		labPuntaje = new JLabel("Puntaje:");
-		add(labPuntaje);
-		txtPuntaje = new JTextField("");
-		txtPuntaje.setForeground(Color.BLACK);
-		txtPuntaje.setBackground(Color.WHITE);
-		add(txtPuntaje);
-		
 		butAgregar = new JButton("Escribir");
 		butAgregar.setActionCommand(AGREGARJUGADOR);
 		add(butAgregar);
-		
 		butLeer = new JButton("Leer");
 		butLeer.setActionCommand(LEERJUGADOR);
 		add(butLeer);
 	}
 	
-	
 
-	public JLabel getLabPuntaje() {
-		return labPuntaje;
-	}
-
-	public void setLabPuntaje(JLabel labPuntaje) {
-		this.labPuntaje = labPuntaje;
-	}
-
-	public JTextField getTxtPuntaje() {
-		return txtPuntaje;
-	}
-
-	public void setTxtPuntaje(JTextField txtPuntaje) {
-		this.txtPuntaje = txtPuntaje;
-	}
 
 	public JLabel getLabNombre() {
 		return labNombre;

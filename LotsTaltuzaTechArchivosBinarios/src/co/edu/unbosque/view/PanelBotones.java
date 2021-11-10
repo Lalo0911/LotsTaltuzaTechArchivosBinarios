@@ -11,12 +11,15 @@ public class PanelBotones extends JPanel{
 	private JButton butJugador;
 	private JButton butJuego;
 	private JButton butPartida;
+	private JLabel labTitulo1, labTitulo2;
 	public static final String JUGADOR = "Jugador";
 	public static final String JUEGO = "Juego";
 	public static final String PARTIDA = "Partida";
 
 	public PanelBotones() {
-		setLayout( new GridLayout(1,4) );
+		setLayout( new GridLayout(5,1) );
+		labTitulo1 = new JLabel("");
+		add(labTitulo1);
 		butJugador = new JButton("Jugador");
 		butJugador.setActionCommand(JUGADOR);
 		add(butJugador);
@@ -26,6 +29,8 @@ public class PanelBotones extends JPanel{
 		butPartida = new JButton("Partida");
 		butPartida.setActionCommand(PARTIDA);
 		add(butPartida);
+		labTitulo2 = new JLabel("");
+		add(labTitulo2);
 	}
 
 	public JButton getButJugador() {

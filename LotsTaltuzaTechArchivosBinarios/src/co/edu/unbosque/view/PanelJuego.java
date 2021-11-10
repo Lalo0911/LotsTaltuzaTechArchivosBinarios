@@ -15,7 +15,6 @@ public class PanelJuego extends JPanel{
 
 	private JTextField txtTipoJuego;
 	private JTextField txtNombreJuego;
-
 	private JButton butAgregar;
 	private JButton butLeer;
 	private JLabel labNombreJuego;
