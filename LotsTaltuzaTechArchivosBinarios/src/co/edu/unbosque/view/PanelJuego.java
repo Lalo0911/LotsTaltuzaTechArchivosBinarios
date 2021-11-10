@@ -8,78 +8,61 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 public class PanelJuego extends JPanel{
-//
-	private JTextArea txtNombre;
-	//private JTextArea txtNombreJuego;
-	//private JTextArea txtTorneo;
-	private JTextArea txtJuego;
-	private JLabel labArchivo;
+
+	private JTextField txtTipoJuego;
+	private JTextField txtNombreJuego;
+
 	private JButton butAgregar;
 	private JButton butLeer;
-	public static final String AGREGAR = "Agregar";
-	public static final String LEER = "Leer";
+	private JLabel labNombreJuego;
+	private JLabel labTipoJuego;
+	public static final String AGREGARJUEGO = "AgregarJuego";
+	public static final String LEERJUEGO = "LeerJuego";
 	private static final long serialVersionUID = 1L;
 	
 	public PanelJuego() {
-		setLayout( new GridLayout(3,3) );
+		setLayout( new GridLayout(3,2) );
 		TitledBorder border = BorderFactory.createTitledBorder("Juego");
 		border.setTitleColor(Color.BLACK);
 		setBorder( border );
-		txtNombre = new JTextArea("NOMBRE JUEGO:");
-		txtNombre.setForeground(Color.BLACK);
-		txtNombre.setBackground(Color.WHITE);
-	
-		//txtTorneo = new JTextArea("");
-		//txtTorneo.setForeground(Color.BLACK);
-		//txtTorneo.setBackground(Color.WHITE);
-		
-		//txtNombreJuego = new JTextArea("TIPO DE JUEGO:");
-		//txtNombreJuego.setForeground(Color.BLACK);
-		//txtNombreJuego.setBackground(Color.WHITE);
-		
-		txtJuego = new JTextArea("");
-		txtJuego.setForeground(Color.BLACK);
-		txtJuego.setBackground(Color.WHITE);
-		
-		butAgregar = new JButton("Escribir");
-		butAgregar.setActionCommand(AGREGAR);
-		butLeer = new JButton("Leer");
-		butLeer.setActionCommand(LEER);
-		
-		
-		add(txtNombre);
-		//add(txtTorneo);
-		//add(txtNombreJuego);
-		add(txtJuego);
+		labNombreJuego = new JLabel("Nombre Juego:");
+		add(labNombreJuego);
+		txtNombreJuego = new JTextField("");
+		txtNombreJuego.setForeground(Color.BLACK);
+		txtNombreJuego.setBackground(Color.WHITE);
+		add(txtNombreJuego);
+		labTipoJuego = new JLabel("Tipo Juego:");
+		add(labTipoJuego);
+		txtTipoJuego = new JTextField("");
+		txtTipoJuego.setForeground(Color.BLACK);
+		txtTipoJuego.setBackground(Color.WHITE);
+		add(txtTipoJuego);
+		butAgregar = new JButton("EscribirJuego");
+		butAgregar.setActionCommand(AGREGARJUEGO);
+		butLeer = new JButton("LeerJuego");
+		butLeer.setActionCommand(LEERJUEGO);
 		add(butAgregar);
 		add(butLeer);
 	}
 
-	public JTextArea getTxtNombre() {
-		return txtNombre;
+	public JTextField getTxtTipoJuego() {
+		return txtTipoJuego;
 	}
 
-	public void setTxtNombre(JTextArea txtNombre) {
-		this.txtNombre = txtNombre;
+	public void setTxtTipoJuego(JTextField txtTipoJuego) {
+		this.txtTipoJuego = txtTipoJuego;
 	}
 
-	public JTextArea getTxtJuego() {
-		return txtJuego;
+	public JTextField getTxtNombreJuego() {
+		return txtNombreJuego;
 	}
 
-	public void setTxtJuego(JTextArea txtJuego) {
-		this.txtJuego = txtJuego;
-	}
-
-	public JLabel getLabArchivo() {
-		return labArchivo;
-	}
-
-	public void setLabArchivo(JLabel labArchivo) {
-		this.labArchivo = labArchivo;
+	public void setTxtNombreJuego(JTextField txtNombreJuego) {
+		this.txtNombreJuego = txtNombreJuego;
 	}
 
 	public JButton getButAgregar() {
@@ -98,17 +81,35 @@ public class PanelJuego extends JPanel{
 		this.butLeer = butLeer;
 	}
 
+	public JLabel getLabNombreJuego() {
+		return labNombreJuego;
+	}
+
+	public void setLabNombreJuego(JLabel labNombreJuego) {
+		this.labNombreJuego = labNombreJuego;
+	}
+
+	public JLabel getLabTipoJuego() {
+		return labTipoJuego;
+	}
+
+	public void setLabTipoJuego(JLabel labTipoJuego) {
+		this.labTipoJuego = labTipoJuego;
+	}
+
 	public static String getAgregar() {
-		return AGREGAR;
+		return AGREGARJUEGO;
 	}
 
 	public static String getLeer() {
-		return LEER;
+		return LEERJUEGO;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	
 
 	
 
