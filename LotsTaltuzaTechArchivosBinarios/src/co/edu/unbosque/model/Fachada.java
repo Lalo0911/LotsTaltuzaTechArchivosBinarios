@@ -8,6 +8,8 @@ public class Fachada {
 	private Partida partida;
 	private BinariosFile bf;
 	private Jugador[] jugador2;
+	private Juego[] jugo;
+	private Partida[] partida2;
 	
 	public Fachada() {
 		
