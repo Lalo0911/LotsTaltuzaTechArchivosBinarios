@@ -18,7 +18,8 @@ public class Controller {
 
 		
 		bd = new Fachada();
-		
+	
+		//Jugador 
 		for(int i=0;i<2;i++){
 		bd.getJugador2()[i].setGenero(JOptionPane.showInputDialog("Ingresar genero"));
 		bd.getJugador2()[i].setNombre(JOptionPane.showInputDialog("Ingresar nombre"));
@@ -29,9 +30,53 @@ public class Controller {
 		bd.getBf().setRuta(1);
 		bd.getBf().escribirClase(bd.getJugador2());
 		bd.getBf().escribirClase(bd.getJugador2());
+		bd.getBf().leerClase(); 
+
+		//Juego
+		
+		bd.getJuego()[0].setNombre("hhhhhhhhh");
+		bd.getJuego()[0].setTipo("2222_22");
+		bd.getBf().setRuta(2);
+		bd.getBf().escribirClase(bd.getJuego());
 		bd.getBf().leerClase();
-		JOptionPane.showMessageDialog(null, bd.getJugador2()[0]);
+		
+		//Partida
+		bd.getPartida()[0].setJugador1("he");
+		bd.getPartida()[0].setJugador2("hola");
+		bd.getPartida()[0].setPuntaje1(0);
+		bd.getPartida()[0].setPuntaje2(0);
+		bd.getPartida()[0].setTipoPartida("se cago");
+		bd.getBf().setRuta(3);
+		bd.getBf().escribirClase(bd.getPartida());
+		bd.getBf().leerClase();
+		
+		
+		
+//		gui = new View(this);
+//		gui.setVisible(true); //hacer visible la ventana principal
 		
 	}
 	
+	
+
+
+//	public void actionPerformed(ActionEvent evento) {
+//		
+//		String resultado;
+//		if (evento.equals("resultado")) {
+//			
+//		}
+//		
+//		if(evento.equals("Lotso")) {
+//			
+//		}
+//		
+//		if(evento.equals("es ")) {
+//			
+//		}
+//		
+//		if(evento.equals("y ama a Jeanpierr")) {
+//	
+//		}
+//	}
 }
