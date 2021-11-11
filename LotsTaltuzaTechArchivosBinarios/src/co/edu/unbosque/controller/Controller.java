@@ -139,7 +139,9 @@ public class Controller implements ActionListener{
 			gui.getContentPane().add(gui.getPanelBotones(),BorderLayout.CENTER);
 			gui.getPanelBotones2().setVisible(false);
 			gui.getPanelResultados().getTxtObjeto1().setText("");
-
+			gui.limpiar_texto(gui.getPanelJugador());
+			gui.limpiar_texto(gui.getPanelPartida());
+			gui.limpiar_texto(gui.getPanelJuego());
 		}
 	}
 

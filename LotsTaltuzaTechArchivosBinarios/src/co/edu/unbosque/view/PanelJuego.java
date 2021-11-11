@@ -7,6 +7,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
@@ -48,6 +49,7 @@ public class PanelJuego extends JPanel{
 		add(butLeer);
 	}
 
+	
 	public JTextField getTxtTipoJuego() {
 		return txtTipoJuego;
 	}

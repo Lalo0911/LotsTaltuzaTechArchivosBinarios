@@ -81,8 +81,8 @@ public class Partida implements Serializable
 
 	@Override
 	public String toString() {
-		return "Partida [tipoPartida=" + tipoPartida + ", jugador1=" + jugador1 + ", jugador2=" + jugador2
-				+ ", puntaje1=" + puntaje1 + ", puntaje2=" + puntaje2 + "]";
+		return "Partida [ TipoPartida=" + tipoPartida + "\n" + "Jugador1=" + jugador1 + ", Puntaje 1=" + puntaje1+"\n"+ "Jugador 2=" + jugador2
+				+ ", Puntaje 2=" + puntaje2 + "]";
 	}
 
 

@@ -4,6 +4,10 @@ import java.awt.Component;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 import co.edu.unbosque.controller.Controller;
 
 
@@ -20,7 +24,7 @@ public class View extends JFrame{
 	
 	public View(Controller control) {
 		
-		setSize(400,350); 
+		setSize(700,500); 
 		setResizable(false); 
 		setTitle("Lots Taltuza Tech"); 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -38,6 +42,18 @@ public class View extends JFrame{
 		panelResultados.setVisible(false);
 		
 	}
+	
+	    public void limpiar_texto(JPanel panel){
+	        for(int i = 0; panel.getComponents().length > i; i++){
+	            if(panel.getComponents()[i] instanceof JTextField){
+	                ((JTextField)panel.getComponents()[i]).setText("");
+	            }
+	            else if(panel.getComponents()[i] instanceof JPasswordField){
+	                ((JPasswordField)panel.getComponents()[i]).setText("");
+	            }
+	        }
+	    }
+
 
 	public PanelJugador1 getPanelEntrada() {
 		return panelJugador;
