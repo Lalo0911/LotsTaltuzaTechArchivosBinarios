@@ -14,11 +14,9 @@ public class JuegoDAO{
 	}
 	
 	public void agregarJuego(JuegoDTO juego1){
-//		juego = bF.leerArchivoJuego();
-		
-		
+		juego = bF.leerArchivoJuego();
 		juego.add(juego1);
-//	    bF.escribirArchivoJuego(juego);
+	    bF.escribirArchivoJuego(juego);
 	}
 	public String leerJuego(){
       String respuesta= "";
