@@ -89,7 +89,7 @@ public class BinariosFile {
 	}
 	
 	public ArrayList<JuegoDTO> leerArchivoJuego() {
-		 ArrayList<JuegoDTO> juego=null;
+		 ArrayList<JuegoDTO> juego= null;
 		try {
 	 		ObjectInputStream in = new ObjectInputStream (new FileInputStream("./Data/juegos.dat")); 
 	 		juego =(ArrayList<JuegoDTO>)in.readObject();
@@ -112,6 +112,8 @@ public class BinariosFile {
 		}
 		return partida;
 	}
+	
+	
 	
 	/*public void setRuta(int seleccionRuta) {
 		switch(seleccionRuta){

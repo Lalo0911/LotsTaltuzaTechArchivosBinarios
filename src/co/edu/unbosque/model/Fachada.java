@@ -1,4 +1,5 @@
 package co.edu.unbosque.model;
+
 import co.edu.unbosque.model.persistence.BinariosFile;
 
 public class Fachada {
@@ -25,7 +26,7 @@ public class Fachada {
 	partidaDTO = new PartidaDTO("","","",0,0);
 	b_file = new BinariosFile();	
 	
-		
+	
 		
 	}
 	

@@ -3,9 +3,7 @@ package co.edu.unbosque.controller;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JOptionPane;
-
 import co.edu.unbosque.model.Fachada;
 import co.edu.unbosque.view.PanelJugador1;
 import co.edu.unbosque.view.View;
@@ -21,7 +19,7 @@ public class Controller implements ActionListener{
 	public Controller() 
 
 	{
-		//
+
 		fachada = new Fachada();
 		gui = new View(this);
 		gui.setVisible(true);
@@ -78,9 +76,12 @@ public class Controller implements ActionListener{
 		//Juego
 		if (evento.getActionCommand().equals(gui.getPanelJuego().LEERJUEGO)) 
 		{
+	
+//			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getJuegoDAO().leerJuego());
 			
-			fachada.getB_file().leerArchivoJuego();
 			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().leerArchivoJuego().toString());
+			
+			
 			
 		}
 		if (evento.getActionCommand().equals(gui.getPanelJuego().AGREGARJUEGO)) 
@@ -89,6 +90,8 @@ public class Controller implements ActionListener{
 			fachada.getJuegoDTO().setTipo(gui.getPanelJuego().getTxtTipoJuego().getText());
 			fachada.getJuegoDAO().agregarJuego(fachada.getJuegoDTO());
 			fachada.getB_file().escribirArchivoJuego(fachada.getJuegoDAO().getJuego());
+			
+			
 		}
 		
 		//Jugador
@@ -124,7 +127,7 @@ public class Controller implements ActionListener{
 //            gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getPartida()[0]+"");
 //            
 //		}
-//		if (evento.getActionCommand().equals(gui.getPanelPartida().AGREGAR)) 
+//		if (evento.getActionCommand().equals(gui.getPanelPartida().AGREGAR));
 //		{
 //			fachada.getPartidaD()[0].setJugador1(gui.getPanelPartida().getTxtJugador1().getText());
 //            fachada.getPartida()[0].setJugador2(gui.getPanelPartida().getTxtJugador2().getText());
