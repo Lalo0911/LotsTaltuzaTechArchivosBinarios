@@ -1,6 +1,8 @@
 package co.edu.unbosque.model.persistence;
 
 import java.io.*;
+import java.util.ArrayList;
+
 import co.edu.unbosque.model.*;
 
 // En esta clase se implementan los métodos básicos de lectura y escritura
@@ -12,14 +14,20 @@ public class BinariosFile {
 	private File f; 
 	private FileOutputStream fos;     
 	private ObjectOutputStream dos;
+	private ArrayList<JuegoDTO> juegoDAO;
+	private ArrayList<JugadorDTO> jugadorDAO;
+	private ArrayList<PartidaDTO> PartidaDAO;
 	private Juego[] juego;
 	private Jugador[] jugador;
 	private Partida[] partida;
 
 	public BinariosFile() {
-	jugador = new Jugador[2];
-	juego = new Juego[1];
-	partida = new Partida[1];
+	juegoDAO = new ArrayList<JuegoDTO>();
+	jugadorDAO = new ArrayList<JugadorDTO>("",0,"",0.0);
+	PartidaDAO = new ArrayList<PartidaDTO>();
+	// jugador = new Jugador[2];
+	// juego = new Juego[1];
+	// partida = new Partida[1];
 	}
 	
 	public String escribirClase(Object[] objeto) {
@@ -45,7 +53,7 @@ public class BinariosFile {
 		try {
 	 		in = new ObjectInputStream(new FileInputStream(ruta));
   			if(ruta.equals("./Data/jugadores.dat")){
-  				jugador = (Jugador[]) in.readObject();
+  				jugador = (ArrayList<jugadorDAO>)in.readObject();
 			}else if(ruta.equals("./Data/juegos.dat")){
 				juego = (Juego[]) in.readObject();
 			}else{
@@ -92,7 +100,6 @@ public class BinariosFile {
 	public void setPartida(Partida[] partida) {
 		this.partida = partida;
 	}
-	
 	
 	
 }
