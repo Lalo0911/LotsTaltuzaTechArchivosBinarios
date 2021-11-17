@@ -10,34 +10,27 @@ import co.edu.unbosque.model.*;
 
 public class BinariosFile {
 
-	private String ruta="";
+	
 	private File f; 
 	private FileOutputStream fos;     
 	private ObjectOutputStream dos;
 	private ArrayList<JuegoDTO> juegoDAO;
 	private ArrayList<JugadorDTO> jugadorDAO;
 	private ArrayList<PartidaDTO> PartidaDAO;
-	private Juego[] juego;
-	private Jugador[] jugador;
-	private Partida[] partida;
+	//private String ruta="";
 
 	public BinariosFile() {
-	juegoDAO = new ArrayList<JuegoDTO>();
-	jugadorDAO = new ArrayList<JugadorDTO>("",0,"",0.0);
-	PartidaDAO = new ArrayList<PartidaDTO>();
-	// jugador = new Jugador[2];
-	// juego = new Juego[1];
-	// partida = new Partida[1];
+
 	}
 	
-	public String escribirClase(Object[] objeto) {
+	
+	public String escribirArchivoJugador(ArrayList<JugadorDTO> jugador) {
 		String mensaje="Archivo Generado Exitosamente!";
-		f=new File(ruta);
+		f=new File("./Data/jugadores.dat");
 		try{     
-			fos=new FileOutputStream(f);     
-			dos=new ObjectOutputStream(fos);     
-			dos.writeObject(objeto);		   
-			dos.close();
+			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(f));
+			salida.writeObject(jugador);
+			salida.close();
 		} 
 		catch(FileNotFoundException e){     
 			mensaje= "No se encontro el archivo"; 
@@ -48,25 +41,79 @@ public class BinariosFile {
 		return mensaje;
 	}
 	
-	public void leerClase() {
-		 ObjectInputStream in;
+	public String escribirArchivoJuego(ArrayList<JuegoDTO> juego) {
+		String mensaje="Archivo Generado Exitosamente!";
+		f=new File("./Data/juegos.dat");
+		try{     
+			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(f));
+			salida.writeObject(juego);
+			salida.close();
+		} 
+		catch(FileNotFoundException e){     
+			mensaje= "No se encontro el archivo"; 
+		} 
+		catch(IOException e){     
+			mensaje = "Error al escribir"; 
+		}
+		return mensaje;
+	}
+	
+	public String escribirArchivoPartida(ArrayList<PartidaDTO> partida) {
+		String mensaje="Archivo Generado Exitosamente!";
+		f=new File("./Data/partidas.dat");
+		try{     
+			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(f));
+			salida.writeObject(partida);
+			salida.close();
+		} 
+		catch(FileNotFoundException e){     
+			mensaje= "No se encontro el archivo"; 
+		} 
+		catch(IOException e){     
+			mensaje = "Error al escribir"; 
+		}
+		return mensaje;
+	}
+	
+	public ArrayList<JugadorDTO> leerArchivoJugador() {
+		 ArrayList<JugadorDTO> jugador=null;
 		try {
-	 		in = new ObjectInputStream(new FileInputStream(ruta));
-  			if(ruta.equals("./Data/jugadores.dat")){
-  				jugador = (ArrayList<jugadorDAO>)in.readObject();
-			}else if(ruta.equals("./Data/juegos.dat")){
-				juego = (Juego[]) in.readObject();
-			}else{
-				partida = (Partida[]) in.readObject();
-			}
-	        in.close();
+	 		ObjectInputStream in = new ObjectInputStream (new FileInputStream("./Data/jugadores.dat")); 
+	 		jugador =(ArrayList<JugadorDTO>)in.readObject();
+	 		in.close();
 
 		} catch (IOException | ClassNotFoundException e) {
-			e.printStackTrace();
+			return null;
 		}
+		return jugador;
 	}
+	
+	public ArrayList<JuegoDTO> leerArchivoJuego() {
+		 ArrayList<JuegoDTO> juego=null;
+		try {
+	 		ObjectInputStream in = new ObjectInputStream (new FileInputStream("./Data/juegos.dat")); 
+	 		juego =(ArrayList<JuegoDTO>)in.readObject();
+	 		in.close();
 
-	public void setRuta(int seleccionRuta) {
+		} catch (IOException | ClassNotFoundException e) {
+			return null;
+		}
+		return juego;
+	}
+	public ArrayList<PartidaDTO> leerArchivoPartida() {
+		 ArrayList<PartidaDTO> partida=null;
+		try {
+	 		ObjectInputStream in = new ObjectInputStream (new FileInputStream("./Data/partidas.dat")); 
+	 		partida =(ArrayList<PartidaDTO>)in.readObject();
+	 		in.close();
+
+		} catch (IOException | ClassNotFoundException e) {
+			return null;
+		}
+		return partida;
+	}
+	
+	/*public void setRuta(int seleccionRuta) {
 		switch(seleccionRuta){
 			case 1: ruta = "./Data/jugadores.dat";
 				break;
@@ -75,31 +122,57 @@ public class BinariosFile {
 			case 3: ruta = "./Data/partidas.dat";
 				break;
 		}
+	}*/
+
+	public File getF() {
+		return f;
 	}
 
-	public Juego[] getJuego() {
-		return juego;
+	public void setF(File f) {
+		this.f = f;
 	}
 
-	public void setJuego(Juego[] juego) {
-		this.juego = juego;
+	public FileOutputStream getFos() {
+		return fos;
 	}
 
-	public Jugador[] getJugador() {
-		return jugador;
+	public void setFos(FileOutputStream fos) {
+		this.fos = fos;
 	}
 
-	public void setJugador(Jugador[] jugador) {
-		this.jugador = jugador;
+	public ObjectOutputStream getDos() {
+		return dos;
 	}
 
-	public Partida[] getPartida() {
-		return partida;
+	public void setDos(ObjectOutputStream dos) {
+		this.dos = dos;
 	}
 
-	public void setPartida(Partida[] partida) {
-		this.partida = partida;
+	public ArrayList<JuegoDTO> getJuegoDAO() {
+		return juegoDAO;
 	}
+
+	public void setJuegoDAO(ArrayList<JuegoDTO> juegoDAO) {
+		this.juegoDAO = juegoDAO;
+	}
+
+	public ArrayList<JugadorDTO> getJugadorDAO() {
+		return jugadorDAO;
+	}
+
+	public void setJugadorDAO(ArrayList<JugadorDTO> jugadorDAO) {
+		this.jugadorDAO = jugadorDAO;
+	}
+
+	public ArrayList<PartidaDTO> getPartidaDAO() {
+		return PartidaDAO;
+	}
+
+	public void setPartidaDAO(ArrayList<PartidaDTO> partidaDAO) {
+		PartidaDAO = partidaDAO;
+	}
+
+
 	
 	
 }

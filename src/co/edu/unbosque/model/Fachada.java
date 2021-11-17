@@ -11,9 +11,9 @@ public class Fachada {
 	private JugadorDAO jugadorDAO;
 	private PartidaDAO partidaDAO;
 	
-	private Jugador[] jugador2;
-	private Juego[] juego;
-	private Partida[] partida;
+//	private Jugador[] jugador2;
+//	private Juego[] juego;
+//	private Partida[] partida;
 	
 	public Fachada() {
 		
@@ -25,13 +25,6 @@ public class Fachada {
 	partidaDTO = new PartidaDTO("","","",0,0);
 	b_file = new BinariosFile();	
 	
-		juego = new Juego[1];
-		juego[0] = new Juego(null,null);
-		partida = new Partida[1];
-		partida[0] = new Partida("","","",0,0);
-		jugador2 = new Jugador[2];
-		jugador2[0] = new Jugador(null, 0, null, 0);
-		jugador2[1] = new Jugador(null, 0, null, 0);
 		
 		
 	}
@@ -44,29 +37,55 @@ public class Fachada {
 		this.b_file = b_file;
 	}
 
-	public Juego[] getJuego() {
-		return juego;
+	public JuegoDTO getJuegoDTO() {
+		return juegoDTO;
 	}
 
-	public void setJuego(Juego[] juego) {
-		this.juego = juego;
+	public void setJuegoDTO(JuegoDTO juegoDTO) {
+		this.juegoDTO = juegoDTO;
 	}
 
-	public Partida[] getPartida() {
-		return partida;
+	public JugadorDTO getJugadorDTO() {
+		return jugadorDTO;
 	}
 
-	public void setPartida(Partida[] partida) {
-		this.partida = partida;
+	public void setJugadorDTO(JugadorDTO jugadorDTO) {
+		this.jugadorDTO = jugadorDTO;
 	}
 
-	public Jugador[] getJugador2() {
-		return jugador2;
+	public PartidaDTO getPartidaDTO() {
+		return partidaDTO;
 	}
 
-	public void setJugador2(Jugador[] jugador2) {
-		this.jugador2 = jugador2;
+	public void setPartidaDTO(PartidaDTO partidaDTO) {
+		this.partidaDTO = partidaDTO;
 	}
+
+	public JuegoDAO getJuegoDAO() {
+		return juegoDAO;
+	}
+
+	public void setJuegoDAO(JuegoDAO juegoDAO) {
+		this.juegoDAO = juegoDAO;
+	}
+
+	public JugadorDAO getJugadorDAO() {
+		return jugadorDAO;
+	}
+
+	public void setJugadorDAO(JugadorDAO jugadorDAO) {
+		this.jugadorDAO = jugadorDAO;
+	}
+
+	public PartidaDAO getPartidaDAO() {
+		return partidaDAO;
+	}
+
+	public void setPartidaDAO(PartidaDAO partidaDAO) {
+		this.partidaDAO = partidaDAO;
+	}
+
+
 	
 	
 }
