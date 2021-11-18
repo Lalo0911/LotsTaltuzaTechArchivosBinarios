@@ -77,11 +77,11 @@ public class PanelPartida extends JPanel{
 		txtTipoPartida.setBackground(Color.WHITE);
 		add(txtTipoPartida);
 		
-		butAgregar = new JButton("AgregarPartida");
+		butAgregar = new JButton("Escribir Partida");
 		butAgregar.setActionCommand(AGREGAR);
 		add(butAgregar);
 		
-		butLeer = new JButton("LeerPartida");
+		butLeer = new JButton("Leer Partida");
 		butLeer.setActionCommand(LEER);
 		add(butLeer);
 	}

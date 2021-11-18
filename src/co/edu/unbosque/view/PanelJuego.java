@@ -41,9 +41,9 @@ public class PanelJuego extends JPanel{
 		txtTipoJuego.setForeground(Color.BLACK);
 		txtTipoJuego.setBackground(Color.WHITE);
 		add(txtTipoJuego);
-		butAgregar = new JButton("AgregarJuego");
+		butAgregar = new JButton("Escribir Juego");
 		butAgregar.setActionCommand(AGREGARJUEGO);
-		butLeer = new JButton("LeerJuego");
+		butLeer = new JButton("Leer Juego");
 		butLeer.setActionCommand(LEERJUEGO);
 		add(butAgregar);
 		add(butLeer);

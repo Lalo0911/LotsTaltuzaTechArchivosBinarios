@@ -87,11 +87,11 @@ public class PanelJugador1 extends JPanel{
 		labVacio2 = new JLabel("");
 		add(labVacio2);
 		
-		butAgregar2 = new JButton("AgregarJugador");
+		butAgregar2 = new JButton("Escribir Jugador");
 		butAgregar2.setActionCommand(AGREGARJUGADOR);
 		add(butAgregar2);
 		
-		butLeer = new JButton("LeerJugador");
+		butLeer = new JButton("Leer Jugador");
 		butLeer.setActionCommand(LEERJUGADOR);
 		add(butLeer);
 	}

@@ -17,7 +17,7 @@ public class PanelBotones2 extends JPanel{
 	public PanelBotones2() {
 		setLayout( new GridLayout(1,3) );
 		labVacio1 = new JLabel("");
-		butRegresar = new JButton("Inicio");
+		butRegresar = new JButton("Regresar");
 		butRegresar.setActionCommand(INICIO);
 		add(butRegresar);
 		add(labVacio1);

@@ -119,9 +119,8 @@ public class Controller implements ActionListener{
 		{
 			fachada.getPartidaDTO().setJugador1(gui.getPanelPartida().getTxtJugador1().getText());
 			fachada.getPartidaDTO().setJugador2(gui.getPanelPartida().getTxtJugador2().getText());
-			System.out.println(Double.parseDouble(gui.getPanelPartida().getTxtPuntaje1().getText()));
-//			fachada.getPartidaDTO().setPuntaje1(Double.parseDouble(gui.getPanelPartida().getTxtPuntaje1().getText()));
-//			fachada.getPartidaDTO().setPuntaje2(Double.parseDouble(gui.getPanelPartida().getTxtPuntaje2().getText()));
+			fachada.getPartidaDTO().setPuntaje1(gui.getPanelPartida().getTxtPuntaje1().getText());
+			fachada.getPartidaDTO().setPuntaje2(gui.getPanelPartida().getTxtPuntaje2().getText());
 			fachada.getPartidaDTO().setTipoPartida(gui.getPanelPartida().getTxtTipoPartida().getText());
 			fachada.getPartidaDAO().agregarPartida(fachada.getPartidaDTO());
 			fachada.getB_file().escribirArchivoPartida(fachada.getPartidaDAO().getPartida());
