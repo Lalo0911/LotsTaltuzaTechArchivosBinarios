@@ -2,6 +2,7 @@ package co.edu.unbosque.model;
 import co.edu.unbosque.model.persistence.BinariosFile;
 import java.util.ArrayList;
 
+
 public class PartidaDAO {
 	
 	private BinariosFile bF;
@@ -29,6 +30,7 @@ public class PartidaDAO {
 	public String leerPartida()
 	{
 		String respuesta = "";
+		System.out.println(bF.leerArchivoPartida().size());
 		for(int i = 0; i<bF.leerArchivoPartida().size(); i++)
 		{
 		respuesta =

@@ -4,13 +4,14 @@ import java.io.Serializable;
 
 public class PartidaDTO implements Serializable 
 {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	
 	private String tipoPartida;
 	private String jugador1;
 	private String jugador2;
 	private String puntaje1;
 	private String puntaje2;
+	
 	public PartidaDTO(String tipoPartida, String jugador1, String jugador2, String puntaje1, String puntaje2) {
 		this.tipoPartida = tipoPartida;
 		this.jugador1 = jugador1;
@@ -18,6 +19,8 @@ public class PartidaDTO implements Serializable
 		this.puntaje1 = puntaje1;
 		this.puntaje2 = puntaje2;
 	}
+	
+	
 	public String getTipoPartida() {
 		return tipoPartida;
 	}

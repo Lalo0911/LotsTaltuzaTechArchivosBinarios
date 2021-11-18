@@ -28,6 +28,7 @@ public class JugadorDAO {
 	
 	public String leerJugador(){
       String respuesta= "";
+      System.out.println(bF.leerArchivoJugador().size());
 			for(int i=0;i<bF.leerArchivoJugador().size();i++){
 	respuesta =
 	"Documento: "+bF.leerArchivoJugador().get(i).getDocumento()+
