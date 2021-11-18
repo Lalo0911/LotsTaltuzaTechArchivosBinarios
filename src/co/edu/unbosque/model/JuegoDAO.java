@@ -14,14 +14,25 @@ public class JuegoDAO{
 	}
 	
 	public void agregarJuego(JuegoDTO juego1){
+		
+		
+		if(bF.leerArchivoJuego()!=null) {
 		juego = bF.leerArchivoJuego();
 		juego.add(juego1);
 	    bF.escribirArchivoJuego(juego);
+		}
+		else {
+			juego.add(juego1);
+			bF.escribirArchivoJuego(juego);
+		}
 	}
+	
 	public String leerJuego(){
       String respuesta= "";
-			for(int x=0;x<bF.leerArchivoJuego().size();x++){
-				respuesta = bF.leerArchivoJuego().get(x)+"\n";	
+			for(int i=0;i<bF.leerArchivoJuego().size();i++){
+	respuesta = 
+	"Nombre: "+bF.leerArchivoJuego().get(i).getNombre()+
+	" Tipo: " +bF.leerArchivoJuego().get(i).getTipo()+"\n"+respuesta;	
 			}
        return respuesta;
     }

@@ -15,9 +15,31 @@ public class PartidaDAO {
 
 	public void agregarPartida(PartidaDTO match)
 	{
+	if(bF.leerArchivoPartida()!=null)
+	{
 	partida = bF.leerArchivoPartida();
 	partida.add(match);
-	bF.escribirArchivoPartida(partida);
+	bF.escribirArchivoPartida(partida);	
+	}else{
+		partida.add(match);
+		bF.escribirArchivoPartida(partida);	
+		}		
+	}
+	
+	public String leerPartida()
+	{
+		String respuesta = "";
+		for(int i = 0; i<bF.leerArchivoPartida().size(); i++)
+		{
+		respuesta =
+		" Jugador 1: " + bF.leerArchivoPartida().get(i).getJugador1() + 
+		" Jugador 2: " + bF.leerArchivoPartida().get(i).getJugador2() +
+		" Puntaje 1: " + bF.leerArchivoPartida().get(i).getPuntaje1() +
+		" Puntaje 2: " + bF.leerArchivoPartida().get(i).getPuntaje2() +	
+		" Tipo partida:" + bF.leerArchivoPartida().get(i).getTipoPartida()+"\n"+respuesta;
+		
+		}
+		return respuesta;
 	}
 
 	public ArrayList<PartidaDTO> getPartida() {

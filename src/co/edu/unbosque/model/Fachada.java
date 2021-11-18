@@ -12,17 +12,13 @@ public class Fachada {
 	private JugadorDAO jugadorDAO;
 	private PartidaDAO partidaDAO;
 	
-//	private Jugador[] jugador2;
-//	private Juego[] juego;
-//	private Partida[] partida;
-	
 	public Fachada() {
 		
 	juegoDAO = new JuegoDAO();
 	jugadorDAO = new JugadorDAO();
 	partidaDAO = new PartidaDAO();
 	juegoDTO = new JuegoDTO(null,null);
-	jugadorDTO = new JugadorDTO(null, 0, null, 0);
+	jugadorDTO = new JugadorDTO(0, null, 0, null, 0);
 	partidaDTO = new PartidaDTO("","","",0,0);
 	b_file = new BinariosFile();	
 	

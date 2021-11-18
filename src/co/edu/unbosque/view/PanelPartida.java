@@ -14,8 +14,8 @@ public class PanelPartida extends JPanel{
 	
 	private static final long serialVersionUID = 1L;
 
-	public static final String AGREGAR = "Agregar";
-	public static final String LEER = "Leer";
+	public static final String AGREGAR = "AgregarPartida";
+	public static final String LEER = "LeerPartida";
 	private JLabel labJugador1;
 	private JTextField txtJugador1;
 	private JLabel labPuntaje1;
@@ -77,15 +77,14 @@ public class PanelPartida extends JPanel{
 		txtTipoPartida.setBackground(Color.WHITE);
 		add(txtTipoPartida);
 		
-		butAgregar = new JButton("Escribir");
+		butAgregar = new JButton("AgregarPartida");
 		butAgregar.setActionCommand(AGREGAR);
 		add(butAgregar);
 		
-		butLeer = new JButton("Leer");
+		butLeer = new JButton("LeerPartida");
 		butLeer.setActionCommand(LEER);
 		add(butLeer);
 	}
-
 
 
 	public JLabel getLabJugador1() {
@@ -93,11 +92,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setLabJugador1(JLabel labJugador1) {
 		this.labJugador1 = labJugador1;
 	}
-
 
 
 	public JTextField getTxtJugador1() {
@@ -105,11 +102,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setTxtJugador1(JTextField txtJugador1) {
 		this.txtJugador1 = txtJugador1;
 	}
-
 
 
 	public JLabel getLabPuntaje1() {
@@ -117,11 +112,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setLabPuntaje1(JLabel labPuntaje1) {
 		this.labPuntaje1 = labPuntaje1;
 	}
-
 
 
 	public JTextField getTxtPuntaje1() {
@@ -129,11 +122,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setTxtPuntaje1(JTextField txtPuntaje1) {
 		this.txtPuntaje1 = txtPuntaje1;
 	}
-
 
 
 	public JLabel getLabJugador2() {
@@ -141,11 +132,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setLabJugador2(JLabel labJugador2) {
 		this.labJugador2 = labJugador2;
 	}
-
 
 
 	public JTextField getTxtJugador2() {
@@ -153,11 +142,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setTxtJugador2(JTextField txtJugador2) {
 		this.txtJugador2 = txtJugador2;
 	}
-
 
 
 	public JButton getButAgregar() {
@@ -165,11 +152,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setButAgregar(JButton butAgregar) {
 		this.butAgregar = butAgregar;
 	}
-
 
 
 	public JButton getButLeer() {
@@ -177,11 +162,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setButLeer(JButton butLeer) {
 		this.butLeer = butLeer;
 	}
-
 
 
 	public JLabel getLabPuntaje2() {
@@ -189,11 +172,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setLabPuntaje2(JLabel labPuntaje2) {
 		this.labPuntaje2 = labPuntaje2;
 	}
-
 
 
 	public JTextField getTxtPuntaje2() {
@@ -201,11 +182,29 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public void setTxtPuntaje2(JTextField txtPuntaje2) {
 		this.txtPuntaje2 = txtPuntaje2;
 	}
 
+
+	public JTextField getTxtTipoPartida() {
+		return txtTipoPartida;
+	}
+
+
+	public void setTxtTipoPartida(JTextField txtTipoPartida) {
+		this.txtTipoPartida = txtTipoPartida;
+	}
+
+
+	public Component getLabTipoPartida() {
+		return labTipoPartida;
+	}
+
+
+	public void setLabTipoPartida(Component labTipoPartida) {
+		this.labTipoPartida = labTipoPartida;
+	}
 
 
 	public static long getSerialversionuid() {
@@ -213,11 +212,9 @@ public class PanelPartida extends JPanel{
 	}
 
 
-
 	public static String getAgregar() {
 		return AGREGAR;
 	}
-
 
 
 	public static String getLeer() {
@@ -226,27 +223,6 @@ public class PanelPartida extends JPanel{
 
 
 
-	public JTextField getTxtTipoPartida() {
-		return txtTipoPartida;
-	}
-
-
-
-	public void setTxtTipoPartida(JTextField txtTipoPartida) {
-		this.txtTipoPartida = txtTipoPartida;
-	}
-
-
-
-	public Component getLabTipoPartida() {
-		return labTipoPartida;
-	}
-
-
-
-	public void setLabTipoPartida(Component labTipoPartida) {
-		this.labTipoPartida = labTipoPartida;
-	}
 	
 
 

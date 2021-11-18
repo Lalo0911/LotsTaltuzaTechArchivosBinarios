@@ -14,8 +14,6 @@ public class Controller implements ActionListener{
 	private Fachada fachada;
 	private View gui;
 
-	//    private View gui;
-
 	public Controller() 
 
 	{
@@ -31,12 +29,15 @@ public class Controller implements ActionListener{
 		gui.getPanelBotones().getButJugador().addActionListener(this);
 		gui.getPanelBotones().getButJuego().addActionListener(this);
 		gui.getPanelBotones().getButPartida().addActionListener(this);
+
 		gui.getPanelJuego().getButAgregar().addActionListener(this);
 		gui.getPanelJuego().getButLeer().addActionListener(this);
+
 		gui.getPanelPartida().getButAgregar().addActionListener(this);
 		gui.getPanelPartida().getButLeer().addActionListener(this);
+
 		gui.getPanelBotones2().getButRegresar().addActionListener(this);
-		gui.getPanelJugador().getButAgregar2().addActionListener(this);
+
 		gui.getPanelJugador().getButLeer().addActionListener(this);
 		gui.getPanelJugador().getButAgregar2().addActionListener(this);
 	}
@@ -76,13 +77,7 @@ public class Controller implements ActionListener{
 		//Juego
 		if (evento.getActionCommand().equals(gui.getPanelJuego().LEERJUEGO)) 
 		{
-	
-//			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getJuegoDAO().leerJuego());
-			
-			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().leerArchivoJuego().toString());
-			
-			
-			
+			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getJuegoDAO().leerJuego());
 		}
 		if (evento.getActionCommand().equals(gui.getPanelJuego().AGREGARJUEGO)) 
 		{    
@@ -90,56 +85,50 @@ public class Controller implements ActionListener{
 			fachada.getJuegoDTO().setTipo(gui.getPanelJuego().getTxtTipoJuego().getText());
 			fachada.getJuegoDAO().agregarJuego(fachada.getJuegoDTO());
 			fachada.getB_file().escribirArchivoJuego(fachada.getJuegoDAO().getJuego());
-			
-			
+
 		}
-		
+
 		//Jugador
-		
-		/*if (evento.getActionCommand().equals(gui.getPanelJugador().LEERJUGADOR)) 
+
+		if (evento.getActionCommand().equals(gui.getPanelJugador().LEERJUGADOR)) 
 		{
-            fachada.getB_file().setRuta(1);
-            fachada.getB_file().leerClase();
-            gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getJugador()[0]+"\n"+fachada.getB_file().getJugador()[1]); 
+			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getJugadorDAO().leerJugador());
+
 		}
 		if (evento.getActionCommand().equals(gui.getPanelJugador().AGREGARJUGADOR)) 
 		{		
-			    fachada.getJugador2()[0].setGenero(gui.getPanelJugador().getTxtGenero().getText());
-	            fachada.getJugador2()[0].setNombre(gui.getPanelJugador().getTxtNombre().getText());
-	            fachada.getJugador2()[0].setEdad(Integer.parseInt(gui.getPanelJugador().getTxtEdad().getText()));
-	            fachada.getJugador2()[0].setPuntaje(Double.parseDouble(gui.getPanelJugador().getTxtPuntaje().getText()));
-	            
-	            fachada.getJugador2()[1].setGenero(gui.getPanelJugador().getTxtGenero2().getText());
-	            fachada.getJugador2()[1].setNombre(gui.getPanelJugador().getTxtNombre2().getText());
-	            fachada.getJugador2()[1].setEdad(Integer.parseInt(gui.getPanelJugador().getTxtEdad2().getText()));
-	            fachada.getJugador2()[1].setPuntaje(Double.parseDouble(gui.getPanelJugador().getTxtPuntaje2().getText()));
-	            fachada.getB_file().setRuta(1);
-	            fachada.getB_file().escribirClase(fachada.getJugador2());
+			fachada.getJugadorDTO().setGenero(gui.getPanelJugador().getTxtGenero().getText());
+			fachada.getJugadorDTO().setDocumento(Integer.parseInt(gui.getPanelJugador().getTxtDocumento().getText()));
+			fachada.getJugadorDTO().setNombre(gui.getPanelJugador().getTxtNombre().getText());
+			fachada.getJugadorDTO().setEdad(Integer.parseInt(gui.getPanelJugador().getTxtEdad().getText()));
+			fachada.getJugadorDTO().setPuntaje(Double.parseDouble(gui.getPanelJugador().getTxtPuntaje().getText()));
+			fachada.getJugadorDAO().agregarJugador(fachada.getJugadorDTO());
+			fachada.getB_file().escribirArchivoJugador(fachada.getJugadorDAO().getJugador());
 		}
-		*/
-		
-		
-		//Partidaa
-//		if ((evento.getActionCommand().equals(gui.getPanelPartida().LEER))) 
-//		{
-//			
-//            fachada.getB_file().leerClase();
-//            gui.getPanelResultados().getTxtObjeto1().setText(fachada.getB_file().getPartida()[0]+"");
-//            
-//		}
-//		if (evento.getActionCommand().equals(gui.getPanelPartida().AGREGAR));
-//		{
-//			fachada.getPartidaD()[0].setJugador1(gui.getPanelPartida().getTxtJugador1().getText());
-//            fachada.getPartida()[0].setJugador2(gui.getPanelPartida().getTxtJugador2().getText());
-//            fachada.getPartida()[0].setPuntaje1(Double.parseDouble(gui.getPanelPartida().getTxtPuntaje1().getText()));
-//            fachada.getPartida()[0].setPuntaje2(Double.parseDouble(gui.getPanelPartida().getTxtPuntaje2().getText()));
-//            fachada.getPartida()[0].setTipoPartida(gui.getPanelPartida().getTxtTipoPartida().getText());
-//            fachada.getB_file().setRuta(3);
-//            fachada.getB_file().escribirClase(fachada.getPartida());
-   
 
-//		}
-		if (evento.getActionCommand().equals(gui.getPanelBotones2().INICIO)) {
+		//
+
+
+		//Partidaa
+		if ((evento.getActionCommand().equals(gui.getPanelPartida().LEER))) 
+		{
+			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getPartidaDAO().leerPartida());
+
+		}
+		if (evento.getActionCommand().equals(gui.getPanelPartida().AGREGAR));
+		{
+			fachada.getPartidaDTO().setJugador1(gui.getPanelPartida().getTxtJugador1().getText());
+			fachada.getPartidaDTO().setJugador2(gui.getPanelPartida().getTxtJugador2().getText());
+			System.out.println(Double.parseDouble(gui.getPanelPartida().getTxtPuntaje1().getText()));
+//			fachada.getPartidaDTO().setPuntaje1(Double.parseDouble(gui.getPanelPartida().getTxtPuntaje1().getText()));
+//			fachada.getPartidaDTO().setPuntaje2(Double.parseDouble(gui.getPanelPartida().getTxtPuntaje2().getText()));
+			fachada.getPartidaDTO().setTipoPartida(gui.getPanelPartida().getTxtTipoPartida().getText());
+			fachada.getPartidaDAO().agregarPartida(fachada.getPartidaDTO());
+			fachada.getB_file().escribirArchivoPartida(fachada.getPartidaDAO().getPartida());
+		}
+
+		if (evento.getActionCommand().equals(gui.getPanelBotones2().INICIO)) 
+		{
 			gui.getPanelResultados().setVisible(false);
 			gui.getPanelPartida().setVisible(false);
 			gui.getPanelJugador().setVisible(false);

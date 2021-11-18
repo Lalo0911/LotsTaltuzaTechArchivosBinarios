@@ -5,16 +5,19 @@ public class JugadorDTO implements Serializable{
 
 	private static final long serialVersionUID = 2L;	
 
+	private long documento;
 	private String nombre;
 	private int edad;
 	private String genero;
 	private double puntaje;
+	
 
-	public JugadorDTO(String nombre,int edad, String genero, double puntaje){
+	public JugadorDTO(long documento,String nombre,int edad, String genero, double puntaje){
 		this.nombre = nombre;
 		this.edad = edad;
 		this.genero = genero;
 		this.puntaje = puntaje;
+		this.documento = documento;
 	}
 
 	public String getNombre() {
@@ -53,8 +56,15 @@ public class JugadorDTO implements Serializable{
 		return serialVersionUID;
 	}
 
-	public String toString() {
-		return "Jugador [nombre=" + nombre + ", edad=" + edad + ", genero=" + genero + ", puntaje=" + puntaje + "]";
+	public long getDocumento() {
+		return documento;
 	}
+
+	public void setDocumento(long documento) {
+		this.documento = documento;
+	}
+
+
+	
 
 }
