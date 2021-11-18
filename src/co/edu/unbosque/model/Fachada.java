@@ -7,19 +7,19 @@ public class Fachada {
 	private BinariosFile b_file;
 	private JuegoDTO juegoDTO;
 	private JugadorDTO jugadorDTO;
-	private PartidaDTO partidaDTO;
 	private JuegoDAO juegoDAO;
 	private JugadorDAO jugadorDAO;
+	private PartidaDTO partidaDTO;
 	private PartidaDAO partidaDAO;
 	
 	public Fachada() {
 		
 	juegoDAO = new JuegoDAO();
 	jugadorDAO = new JugadorDAO();
-	partidaDAO = new PartidaDAO();
 	juegoDTO = new JuegoDTO(null,null);
 	jugadorDTO = new JugadorDTO(0, null, 0, null, 0);
-	partidaDTO = new PartidaDTO("hello ","me ","llamo ","Santiago "," Wuhuuuu");
+	partidaDTO = new PartidaDTO(null,null,null,null,null);
+	partidaDAO = new PartidaDAO();
 	b_file = new BinariosFile();	
 	
 	
@@ -81,8 +81,5 @@ public class Fachada {
 	public void setPartidaDAO(PartidaDAO partidaDAO) {
 		this.partidaDAO = partidaDAO;
 	}
-
-
-	
 	
 }

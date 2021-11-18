@@ -9,15 +9,8 @@ import co.edu.unbosque.model.*;
 // de los dos ejemplos de clase, por esta razón, van aquí.
 
 public class BinariosFile {
-
 	
 	private File f; 
-	private FileOutputStream fos;     
-	private ObjectOutputStream dos;
-	private ArrayList<JuegoDTO> juegoDAO;
-	private ArrayList<JugadorDTO> jugadorDAO;
-	private ArrayList<PartidaDTO> PartidaDAO;
-	//private String ruta="";
 
 	public BinariosFile() {
 
@@ -74,6 +67,7 @@ public class BinariosFile {
 		return mensaje;
 	}
 	
+	
 	public ArrayList<JugadorDTO> leerArchivoJugador() {
 		 ArrayList<JugadorDTO> jugador=null;
 		try {
@@ -99,8 +93,9 @@ public class BinariosFile {
 		}
 		return juego;
 	}
+	
 	public ArrayList<PartidaDTO> leerArchivoPartida() {
-		 ArrayList<PartidaDTO> partida=null;
+		 ArrayList<PartidaDTO> partida = null;
 		try {
 	 		ObjectInputStream in = new ObjectInputStream (new FileInputStream("./Data/partidas.dat")); 
 	 		partida =(ArrayList<PartidaDTO>)in.readObject();
@@ -112,55 +107,5 @@ public class BinariosFile {
 		return partida;
 	}
 
-	public File getF() {
-		return f;
-	}
 
-	public void setF(File f) {
-		this.f = f;
-	}
-
-	public FileOutputStream getFos() {
-		return fos;
-	}
-
-	public void setFos(FileOutputStream fos) {
-		this.fos = fos;
-	}
-
-	public ObjectOutputStream getDos() {
-		return dos;
-	}
-
-	public void setDos(ObjectOutputStream dos) {
-		this.dos = dos;
-	}
-
-	public ArrayList<JuegoDTO> getJuegoDAO() {
-		return juegoDAO;
-	}
-
-	public void setJuegoDAO(ArrayList<JuegoDTO> juegoDAO) {
-		this.juegoDAO = juegoDAO;
-	}
-
-	public ArrayList<JugadorDTO> getJugadorDAO() {
-		return jugadorDAO;
-	}
-
-	public void setJugadorDAO(ArrayList<JugadorDTO> jugadorDAO) {
-		this.jugadorDAO = jugadorDAO;
-	}
-
-	public ArrayList<PartidaDTO> getPartidaDAO() {
-		return PartidaDAO;
-	}
-
-	public void setPartidaDAO(ArrayList<PartidaDTO> partidaDAO) {
-		PartidaDAO = partidaDAO;
-	}
-
-
-	
-	
 }

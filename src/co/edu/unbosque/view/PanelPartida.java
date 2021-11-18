@@ -1,7 +1,6 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -26,10 +25,8 @@ public class PanelPartida extends JPanel{
 	private JButton butLeer;
 	private JLabel labPuntaje2;
 	private JTextField txtPuntaje2;
-
 	private JTextField txtTipoPartida;
-
-	private Component labTipoPartida;
+	private JLabel labTipoPartida;
 
 	
 	public PanelPartida() {
@@ -197,12 +194,12 @@ public class PanelPartida extends JPanel{
 	}
 
 
-	public Component getLabTipoPartida() {
+	public JLabel getLabTipoPartida() {
 		return labTipoPartida;
 	}
 
 
-	public void setLabTipoPartida(Component labTipoPartida) {
+	public void setLabTipoPartida(JLabel labTipoPartida) {
 		this.labTipoPartida = labTipoPartida;
 	}
 
@@ -212,16 +209,18 @@ public class PanelPartida extends JPanel{
 	}
 
 
-	public static String getAgregar() {
+	public static String getAgregarpartida() {
 		return AGREGARPARTIDA;
 	}
 
 
-	public static String getLeer() {
+	public static String getLeerpartida() {
 		return LEERPARTIDA;
 	}
+	
 
 
+	
 
 	
 

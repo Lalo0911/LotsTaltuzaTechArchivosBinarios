@@ -87,8 +87,6 @@ public class Controller implements ActionListener{
 			fachada.getJuegoDTO().setTipo(gui.getPanelJuego().getTxtTipoJuego().getText());
 			fachada.getJuegoDAO().agregarJuego(fachada.getJuegoDTO());
 			fachada.getB_file().escribirArchivoJuego(fachada.getJuegoDAO().getJuego());
-			
-
 		}
 
 		//Jugador
@@ -108,19 +106,12 @@ public class Controller implements ActionListener{
 			fachada.getJugadorDAO().agregarJugador(fachada.getJugadorDTO());
 			fachada.getB_file().escribirArchivoJugador(fachada.getJugadorDAO().getJugador());
 		}
-
-		//
-
-
-		//Partidaa
-		if ((evento.getActionCommand().equals(gui.getPanelPartida().LEERPARTIDA))) 
-		{
-			System.out.println(fachada.getPartidaDAO().leerPartida());
+		
+		if(evento.getActionCommand().equals(gui.getPanelPartida().LEERPARTIDA)) {
 			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getPartidaDAO().leerPartida());
-
 		}
-		if (evento.getActionCommand().equals(gui.getPanelPartida().AGREGARPARTIDA));
-		{
+
+		if(evento.getActionCommand().equals(gui.getPanelPartida().AGREGARPARTIDA)) {
 			fachada.getPartidaDTO().setJugador1(gui.getPanelPartida().getTxtJugador1().getText());
 			fachada.getPartidaDTO().setJugador2(gui.getPanelPartida().getTxtJugador2().getText());
 			fachada.getPartidaDTO().setPuntaje1(gui.getPanelPartida().getTxtPuntaje1().getText());
@@ -128,7 +119,10 @@ public class Controller implements ActionListener{
 			fachada.getPartidaDTO().setTipoPartida(gui.getPanelPartida().getTxtTipoPartida().getText());
 			fachada.getPartidaDAO().agregarPartida(fachada.getPartidaDTO());
 			fachada.getB_file().escribirArchivoPartida(fachada.getPartidaDAO().getPartida());
+			
 		}
+		
+		
 
 		if (evento.getActionCommand().equals(gui.getPanelBotones2().INICIO)) 
 		{

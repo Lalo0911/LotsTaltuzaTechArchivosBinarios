@@ -3,7 +3,7 @@ import java.io.Serializable;
 
 public class JugadorDTO implements Serializable{
 
-	private static final long serialVersionUID = 2L;	
+	private static final long serialVersionUID = 1L;	
 
 	private long documento;
 	private String nombre;

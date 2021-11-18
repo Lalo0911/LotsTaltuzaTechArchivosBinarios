@@ -24,7 +24,7 @@ public class PanelBotones2 extends JPanel{
 		butRegresar.setActionCommand(INICIO);
 		add(butRegresar);
 		add(labVacio1);
-		butBuscar = new JButton("Buscar");
+		butBuscar = new JButton("Buscar Persona");
 		butBuscar.setActionCommand(PANELBUSCAR);
 		add(butBuscar);
 
