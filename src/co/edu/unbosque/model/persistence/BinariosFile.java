@@ -22,8 +22,7 @@ public class BinariosFile {
 	public BinariosFile() {
 
 	}
-	
-	
+
 	public String escribirArchivoJugador(ArrayList<JugadorDTO> jugador) {
 		String mensaje="Archivo Generado Exitosamente!";
 		f=new File("./Data/jugadores.dat");
@@ -112,19 +111,6 @@ public class BinariosFile {
 		}
 		return partida;
 	}
-	
-	
-	
-	/*public void setRuta(int seleccionRuta) {
-		switch(seleccionRuta){
-			case 1: ruta = "./Data/jugadores.dat";
-				break;
-			case 2: ruta = "./Data/juegos.dat";
-				break;
-			case 3: ruta = "./Data/partidas.dat";
-				break;
-		}
-	}*/
 
 	public File getF() {
 		return f;
