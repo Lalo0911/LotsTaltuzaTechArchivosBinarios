@@ -14,8 +14,8 @@ public class PanelPartida extends JPanel{
 	
 	private static final long serialVersionUID = 1L;
 
-	public static final String AGREGAR = "AgregarPartida";
-	public static final String LEER = "LeerPartida";
+	public static final String AGREGARPARTIDA = "AgregarPartida";
+	public static final String LEERPARTIDA = "LeerPartida";
 	private JLabel labJugador1;
 	private JTextField txtJugador1;
 	private JLabel labPuntaje1;
@@ -78,11 +78,11 @@ public class PanelPartida extends JPanel{
 		add(txtTipoPartida);
 		
 		butAgregar = new JButton("Escribir Partida");
-		butAgregar.setActionCommand(AGREGAR);
+		butAgregar.setActionCommand(AGREGARPARTIDA);
 		add(butAgregar);
 		
 		butLeer = new JButton("Leer Partida");
-		butLeer.setActionCommand(LEER);
+		butLeer.setActionCommand(LEERPARTIDA);
 		add(butLeer);
 	}
 
@@ -213,12 +213,12 @@ public class PanelPartida extends JPanel{
 
 
 	public static String getAgregar() {
-		return AGREGAR;
+		return AGREGARPARTIDA;
 	}
 
 
 	public static String getLeer() {
-		return LEER;
+		return LEERPARTIDA;
 	}
 
 

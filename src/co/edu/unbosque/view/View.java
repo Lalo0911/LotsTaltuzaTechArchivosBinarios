@@ -16,6 +16,7 @@ public class View extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	private PanelJugador1 panelJugador; 
+	private PanelBuscar panelBuscar;
 	private PanelResultados panelResultados; 
 	private PanelJuego panelJuego;
 	private PanelPartida panelPartida;
@@ -32,6 +33,7 @@ public class View extends JFrame{
 		setLayout( new BorderLayout() );
 		panelJugador = new PanelJugador1();
 		panelBotones = new PanelBotones();
+		panelBuscar = new PanelBuscar();
 		add(panelBotones,BorderLayout.CENTER);
 		panelJuego = new PanelJuego();
 		panelBotones2 = new PanelBotones2();
@@ -40,6 +42,8 @@ public class View extends JFrame{
 		panelResultados = new PanelResultados();
 		panelBotones2.setVisible(false);
 		panelResultados.setVisible(false);
+		panelBuscar = new PanelBuscar();
+		panelBuscar.setVisible(false);
 		
 	}
 	
@@ -126,6 +130,14 @@ public class View extends JFrame{
 
 	public void setPanelBotones2(PanelBotones2 panelBotones2) {
 		this.panelBotones2 = panelBotones2;
+	}
+
+	public PanelBuscar getPanelBuscar() {
+		return panelBuscar;
+	}
+
+	public void setPanelBuscar(PanelBuscar panelBuscar) {
+		this.panelBuscar = panelBuscar;
 	}	
 	
 }

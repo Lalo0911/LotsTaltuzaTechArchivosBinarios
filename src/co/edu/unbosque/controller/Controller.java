@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import co.edu.unbosque.model.Fachada;
-import co.edu.unbosque.view.PanelJugador1;
 import co.edu.unbosque.view.View;
 
 
@@ -40,6 +39,9 @@ public class Controller implements ActionListener{
 
 		gui.getPanelJugador().getButLeer().addActionListener(this);
 		gui.getPanelJugador().getButAgregar2().addActionListener(this);
+		
+		gui.getPanelBotones2().getButBuscar().addActionListener(this);
+		gui.getPanelBuscar().getButAgregar().addActionListener(this);
 	}
 
 	public void actionPerformed(ActionEvent evento) 
@@ -85,6 +87,7 @@ public class Controller implements ActionListener{
 			fachada.getJuegoDTO().setTipo(gui.getPanelJuego().getTxtTipoJuego().getText());
 			fachada.getJuegoDAO().agregarJuego(fachada.getJuegoDTO());
 			fachada.getB_file().escribirArchivoJuego(fachada.getJuegoDAO().getJuego());
+			
 
 		}
 
@@ -110,12 +113,13 @@ public class Controller implements ActionListener{
 
 
 		//Partidaa
-		if ((evento.getActionCommand().equals(gui.getPanelPartida().LEER))) 
+		if ((evento.getActionCommand().equals(gui.getPanelPartida().LEERPARTIDA))) 
 		{
+			System.out.println(fachada.getPartidaDAO().leerPartida());
 			gui.getPanelResultados().getTxtObjeto1().setText(fachada.getPartidaDAO().leerPartida());
 
 		}
-		if (evento.getActionCommand().equals(gui.getPanelPartida().AGREGAR));
+		if (evento.getActionCommand().equals(gui.getPanelPartida().AGREGARPARTIDA));
 		{
 			fachada.getPartidaDTO().setJugador1(gui.getPanelPartida().getTxtJugador1().getText());
 			fachada.getPartidaDTO().setJugador2(gui.getPanelPartida().getTxtJugador2().getText());
@@ -133,13 +137,53 @@ public class Controller implements ActionListener{
 			gui.getPanelJugador().setVisible(false);
 			gui.getPanelJuego().setVisible(false);
 			gui.getPanelBotones().setVisible(true);
+			gui.getPanelBuscar().setVisible(false);
 			gui.getContentPane().add(gui.getPanelBotones(),BorderLayout.CENTER);
 			gui.getPanelBotones2().setVisible(false);
 			gui.getPanelResultados().getTxtObjeto1().setText("");
 			gui.limpiar_texto(gui.getPanelJugador());
 			gui.limpiar_texto(gui.getPanelPartida());
 			gui.limpiar_texto(gui.getPanelJuego());
+			gui.limpiar_texto(gui.getPanelBuscar());
 		}
+		
+		
+		
+		
+		if (evento.getActionCommand().equals(gui.getPanelBotones2().PANELBUSCAR)) 
+		{
+			gui.getContentPane().add(gui.getPanelBuscar(),BorderLayout.CENTER);
+			gui.getContentPane().add(gui.getPanelResultados(),BorderLayout.SOUTH);
+			gui.getPanelResultados().setVisible(true);
+			gui.getPanelBuscar().setVisible(true);
+			gui.getPanelPartida().setVisible(false);
+			gui.getPanelJugador().setVisible(false);
+			gui.getPanelJuego().setVisible(false);
+			gui.getPanelBotones().setVisible(false);
+			gui.limpiar_texto(gui.getPanelBuscar());
+			
+		}
+		
+		if (evento.getActionCommand().equals(gui.getPanelBuscar().BUSCAR)) 
+		{			
+			
+					
+				if(fachada.getJugadorDAO().buscarJugador(Integer.parseInt(gui.getPanelBuscar().getTxtBuscar().getText()))!=null) {
+					
+			gui.getPanelResultados().getTxtObjeto1().setText(	
+			"Documento: "+fachada.getJugadorDAO().buscarJugador(Integer.parseInt(gui.getPanelBuscar().getTxtBuscar().getText())).getDocumento()+"\n"+
+			"Nombre: "+fachada.getJugadorDAO().buscarJugador(Integer.parseInt(gui.getPanelBuscar().getTxtBuscar().getText())).getNombre()+"\n"+
+			"Edad: "+fachada.getJugadorDAO().buscarJugador(Integer.parseInt(gui.getPanelBuscar().getTxtBuscar().getText())).getEdad()+"\n"+
+			"Genero: "+fachada.getJugadorDAO().buscarJugador(Integer.parseInt(gui.getPanelBuscar().getTxtBuscar().getText())).getGenero()+"\n"+
+			"Puntaje: "+fachada.getJugadorDAO().buscarJugador(Integer.parseInt(gui.getPanelBuscar().getTxtBuscar().getText())).getPuntaje());
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "El jugador con documento '"+gui.getPanelBuscar().getTxtBuscar().getText()+"' no existe");
+				}
+				
+			
+		}
+		
 	}
 
 }

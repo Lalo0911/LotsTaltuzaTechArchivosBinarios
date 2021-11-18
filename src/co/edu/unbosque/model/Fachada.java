@@ -19,7 +19,7 @@ public class Fachada {
 	partidaDAO = new PartidaDAO();
 	juegoDTO = new JuegoDTO(null,null);
 	jugadorDTO = new JugadorDTO(0, null, 0, null, 0);
-	partidaDTO = new PartidaDTO("","","","","");
+	partidaDTO = new PartidaDTO("hello ","me ","llamo ","Santiago "," Wuhuuuu");
 	b_file = new BinariosFile();	
 	
 	

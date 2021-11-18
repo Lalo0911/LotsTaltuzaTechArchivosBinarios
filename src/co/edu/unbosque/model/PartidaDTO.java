@@ -12,7 +12,6 @@ public class PartidaDTO implements Serializable
 	private String puntaje1;
 	private String puntaje2;
 	public PartidaDTO(String tipoPartida, String jugador1, String jugador2, String puntaje1, String puntaje2) {
-		super();
 		this.tipoPartida = tipoPartida;
 		this.jugador1 = jugador1;
 		this.jugador2 = jugador2;
@@ -51,13 +50,5 @@ public class PartidaDTO implements Serializable
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}
-	
-	
-	
-	
-	
-
-
-	
+	}	
 }

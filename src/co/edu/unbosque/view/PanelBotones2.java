@@ -11,7 +11,10 @@ public class PanelBotones2 extends JPanel{
 	private JButton butRegresar;
 	private JLabel labVacio1;
 	private JLabel labVacio2;
+
+	private JButton butBuscar;
 	public static final String INICIO = "Inicio";
+	public static final String PANELBUSCAR = "Buscar";
 
 
 	public PanelBotones2() {
@@ -21,8 +24,9 @@ public class PanelBotones2 extends JPanel{
 		butRegresar.setActionCommand(INICIO);
 		add(butRegresar);
 		add(labVacio1);
-		labVacio2 = new JLabel("");
-		add(labVacio2);
+		butBuscar = new JButton("Buscar");
+		butBuscar.setActionCommand(PANELBUSCAR);
+		add(butBuscar);
 
 	}
 
@@ -58,6 +62,24 @@ public class PanelBotones2 extends JPanel{
 	public void setLabVacio2(JLabel labVacio2) {
 		this.labVacio2 = labVacio2;
 	}
+
+
+	public JButton getButBuscar() {
+		return butBuscar;
+	}
+
+
+
+	public void setButBuscar(JButton butBuscar) {
+		this.butBuscar = butBuscar;
+	}
+
+
+
+	public static String getPanelbuscar() {
+		return PANELBUSCAR;
+	}
+
 
 
 	public static long getSerialversionuid() {

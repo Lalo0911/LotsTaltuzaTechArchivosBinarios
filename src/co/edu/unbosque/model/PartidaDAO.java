@@ -37,7 +37,6 @@ public class PartidaDAO {
 		" Puntaje 1: " + bF.leerArchivoPartida().get(i).getPuntaje1() +
 		" Puntaje 2: " + bF.leerArchivoPartida().get(i).getPuntaje2() +	
 		" Tipo partida:" + bF.leerArchivoPartida().get(i).getTipoPartida()+"\n"+respuesta;
-		
 		}
 		return respuesta;
 	}
